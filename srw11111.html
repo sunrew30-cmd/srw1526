@@ -1,34 +1,665 @@
-Mime-Version: 1.0
-Content-Base: https://notepad-online.com/en/
-Content-Type: Multipart/related; boundary="NEXT.ITEM-BOUNDARY";type="text/html"
-
---NEXT.ITEM-BOUNDARY
-Content-Type: text/html; charset="utf-8"
-Content-Location: https://notepad-online.com/en/
-
-<!DOCTYPE html>
-<html xmlns:o="urn:schemas-microsoft-com:office:office" 
-xmlns:w="urn:schemas-microsoft-com:office:word" 
-xmlns="http://www.w3.org/TR/REC-html40">
+<!doctype html>
+<html lang="ru">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!--[if gte mso 9]><xml>
- <w:WordDocument>
-  <w:View>Print</w:View>
-  <w:GrammarState>Clean</w:GrammarState>
-  <w:ValidateAgainstSchemas/>
-  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
-  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
-  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
-  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
- </w:WordDocument>
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
- </w:LatentStyles>
-</xml><![endif]-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<title>SRW // 1526</title>
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="SRW // 1526">
+<meta property="og:description" content="IT'S COMING">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8'/%3E%3Crect x='1' y='1' width='6' height='6' fill='%2300c21a'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000;overscroll-behavior:none}
+body{font-family:"Press Start 2P","Courier New",monospace;image-rendering:pixelated;-webkit-font-smoothing:none;-webkit-user-select:none;user-select:none}
+input{-webkit-user-select:text;user-select:text}
+#fx{position:fixed;inset:0;z-index:0}
+#snow{position:fixed;inset:0;z-index:6;pointer-events:none}
 
+/* SCREENS + THEMES */
+.screen{--c:#00c21a;--d:#004d0a;--m:#00600f;position:fixed;inset:0;display:none;z-index:1;align-items:center;justify-content:center;color:var(--c);
+background:linear-gradient(color-mix(in srgb,var(--c) 7%,transparent) 1px,transparent 1px) 0 0/16px 16px,
+linear-gradient(90deg,color-mix(in srgb,var(--c) 7%,transparent) 1px,transparent 1px) 0 0/16px 16px}
+.screen::after{content:"";position:absolute;inset:0;z-index:9;pointer-events:none;
+background:repeating-linear-gradient(0deg,color-mix(in srgb,var(--c) 7%,transparent) 0 2px,transparent 2px 4px)}
+.r{--c:#d40012;--d:#4a0006;--m:#6b0009}
+.p{--c:#ff1fa8;--d:#5c0040;--m:#8a0061}
+.y{--c:#ffc400;--d:#5a4500;--m:#7a5f00}
+.v{--c:#b57bff;--d:#3b1380;--m:#6a3cc0;--box:#1c0640}
+.c{--c:#ffd400;--d:#b00020;--m:#e03a3a;--box:#14001f}
+.screen.e{--c:#ff3db8;--d:#5c0040;--m:#a0006e;--box:#000;
+background:repeating-linear-gradient(135deg,rgba(255,61,184,.13) 0 14px,transparent 14px 28px)}
+.glitch .screen.v.on,.glitch .screen.e.on,.glitch .screen.nogl.on{animation:none}
+.screen.on{display:flex}
+
+/* BOX */
+.box{position:relative;z-index:5;width:min(460px,90vw);max-height:94vh;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:32px 24px;text-align:center;background:var(--box,#000);
+border:4px solid var(--c);box-shadow:inset 0 0 0 4px var(--box,#000),inset 0 0 0 6px var(--m);
+clip-path:polygon(0 8px,8px 8px,8px 0,calc(100% - 8px) 0,calc(100% - 8px) 8px,100% 8px,100% calc(100% - 8px),calc(100% - 8px) calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,8px calc(100% - 8px),0 calc(100% - 8px));
+animation:in .6s steps(5) both}
+.box.wide{width:min(680px,92vw);text-align:left;max-height:92vh}
+.box.scroll{max-height:92vh}
+.title{font-size:clamp(14px,4.4vw,30px);margin-bottom:16px;text-shadow:4px 4px 0 var(--d);word-break:break-word}
+.title:empty{display:none}
+.subtitle{font-size:10px;line-height:1.6;margin-bottom:24px;opacity:.8}
+.ask{font-size:clamp(12px,3.4vw,18px);line-height:1.7;text-shadow:4px 4px 0 var(--d)}
+.tiny{font-size:7px;margin-top:16px;opacity:.55;line-height:1.8}
+.error{margin-top:18px;font-size:8px;line-height:1.7;min-height:14px}
+.cnt{margin-top:14px;font-size:7px;line-height:1.8;opacity:.6}
+
+/* PIXEL ICONS */
+.xicon{display:flex;justify-content:center;align-items:center;gap:16px;margin-bottom:18px;color:var(--c);filter:drop-shadow(4px 4px 0 var(--d))}
+.xicon:empty{display:none}
+.xicon .b,.xlink .b{fill:var(--box,#000)}
+.xlink{display:flex;justify-content:center;margin-bottom:18px;color:var(--c);text-decoration:none;filter:drop-shadow(4px 4px 0 var(--d));animation:bob 1s steps(2) infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+
+input{width:100%;padding:14px 10px;background:#000;color:var(--c);border:4px solid var(--c);outline:none;text-align:center;
+font:16px "Press Start 2P","Courier New",monospace;letter-spacing:3px;border-radius:0;text-transform:uppercase}
+input::placeholder{color:var(--m)}
+input:focus{box-shadow:4px 4px 0 var(--d)}
+
+.btn{margin-top:18px;padding:14px 22px;background:var(--box,#000);color:var(--c);border:4px solid var(--c);font:12px "Press Start 2P","Courier New",monospace;
+cursor:pointer;text-decoration:none;display:inline-block;box-shadow:6px 6px 0 var(--d);border-radius:0}
+.btn:hover{background:var(--c);color:#000}
+.btn:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--d)}
+.row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.qmark{position:absolute;top:14px;right:14px;margin:0;width:36px;height:36px;padding:0;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:4px 4px 0 var(--d)}
+#snd{position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;margin:0;padding:8px;font-size:8px;border-width:2px;box-shadow:none;opacity:.7;color:#0c0;border-color:#0c0}
+
+/* LIST + STORY */
+.emo-list{list-style:none;margin:0 0 6px;padding:0;display:flex;flex-direction:column;gap:16px;text-align:left;font-size:clamp(9px,2.6vw,13px);line-height:1.6}
+.emo-list li{text-shadow:3px 3px 0 var(--d)}
+.emo-list li::before{content:"✖ ";color:var(--m)}
+.emo-list li.k{animation:dim 3s steps(2) infinite}
+.story-text{font-size:clamp(8px,2.2vw,11px);line-height:2.1}
+.story-text p{margin:0 0 20px}
+.box.wide .btn{display:block;width:max-content;margin:24px auto 0}
+
+/* TIMERS */
+.date{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
+.dateText{font-size:clamp(22px,6vw,56px);text-shadow:6px 6px 0 var(--d)}
+.countdown{font-size:clamp(16px,4.5vw,46px);margin-top:28px;text-shadow:5px 5px 0 var(--d)}
+.caption{font-size:clamp(7px,1.4vw,11px);margin-top:20px;line-height:1.8;opacity:.7}
+.two,.three{margin-top:50px;font-size:clamp(36px,9vw,90px);text-shadow:6px 6px 0 var(--d);color:var(--c);text-decoration:none}
+.two:hover,.three:hover{animation:blink .4s steps(2) infinite}
+.coming{font-size:clamp(18px,5.5vw,60px);line-height:1.5;text-shadow:6px 6px 0 var(--d);animation:blink 1.2s steps(2) infinite}
+.back{position:absolute;z-index:8;left:16px;top:calc(16px + env(safe-area-inset-top,0px));color:var(--m);font-size:9px;text-decoration:none}
+.back:hover{color:var(--c)}
+.status{position:absolute;z-index:8;top:calc(16px + env(safe-area-inset-top,0px));right:16px;font-size:8px;opacity:.6}
+
+/* RAVE */
+#rave{animation:strobe 1.6s steps(1) infinite;background:#ff1fa8;color:#000}
+#rave .coming{animation:none;text-shadow:none}
+#rave .btn{color:#000;border-color:#000;background:transparent;box-shadow:none}
+@keyframes strobe{0%{background:#ff1fa8}25%{background:#00c21a}50%{background:#d40012}75%{background:#00e5ff}}
+
+/* BOOT */
+.boot-title{font-size:clamp(11px,2.6vw,18px);margin-bottom:28px;line-height:1.5}
+.boot-file{display:flex;align-items:flex-start;gap:14px;font-size:clamp(10px,2.4vw,14px);line-height:1.8;min-height:60px;text-align:left}
+.file-icon{display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:4px solid var(--c);font-size:12px;flex-shrink:0}
+.cur{display:inline-block;width:10px;height:14px;background:currentColor;margin-left:6px;vertical-align:middle;animation:blink 1s steps(2) infinite}
+
+/* GLITCH */
+.glitch .screen.on{animation:gl .3s steps(2) 1}
+@keyframes gl{0%{transform:none}25%{transform:translate(-6px,2px);filter:hue-rotate(90deg)}50%{transform:translate(6px,-2px)}75%{transform:translate(-3px,0);filter:none}100%{transform:none}}
+@keyframes blink{50%{opacity:0}}
+@keyframes dim{50%{opacity:.4}}
+@keyframes in{from{opacity:0;transform:scale(.94) translateY(20px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){#rave,.xlink{animation:none}.glitch .screen.on,.coming{animation:none}}
 </style>
 </head>
-<body><div style="font-family:Calibri,sans-serif;font-size:11pt;"><p>&lt;!doctype html&gt;<br>&lt;html lang="ru"&gt;<br>&lt;head&gt;<br>&lt;meta charset="utf-8"&gt;<br>&lt;meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover"&gt;<br>&lt;title&gt;SRW // 1526&lt;/title&gt;<br>&lt;meta name="theme-color" content="#000000"&gt;<br>&lt;meta property="og:title" content="SRW // 1526"&gt;<br>&lt;meta property="og:description" content="IT'S COMING"&gt;<br>&lt;link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8'/%3E%3Crect x='1' y='1' width='6' height='6' fill='%2300c21a'/%3E%3C/svg%3E"&gt;<br>&lt;link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap" rel="stylesheet"&gt;<br>&lt;script src="https://telegram.org/js/telegram-web-app.js"&gt;&lt;/script&gt;<br>&lt;style&gt;<br>*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}<br>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000;overscroll-behavior:none}<br>body{font-family:"Press Start 2P","Courier New",monospace;image-rendering:pixelated;-webkit-font-smoothing:none;-webkit-user-select:none;user-select:none}<br>input{-webkit-user-select:text;user-select:text}<br>#fx{position:fixed;inset:0;z-index:0}<br>#snow{position:fixed;inset:0;z-index:6;pointer-events:none}</p><p>/* SCREENS + THEMES */<br>.screen{--c:#00c21a;--d:#004d0a;--m:#00600f;position:fixed;inset:0;display:none;z-index:1;align-items:center;justify-content:center;color:var(--c);<br>background:linear-gradient(color-mix(in srgb,var(--c) 7%,transparent) 1px,transparent 1px) 0 0/16px 16px,<br>linear-gradient(90deg,color-mix(in srgb,var(--c) 7%,transparent) 1px,transparent 1px) 0 0/16px 16px}<br>.screen::after{content:"";position:absolute;inset:0;z-index:9;pointer-events:none;<br>background:repeating-linear-gradient(0deg,color-mix(in srgb,var(--c) 7%,transparent) 0 2px,transparent 2px 4px)}<br>.r{--c:#d40012;--d:#4a0006;--m:#6b0009}<br>.p{--c:#ff1fa8;--d:#5c0040;--m:#8a0061}<br>.y{--c:#ffc400;--d:#5a4500;--m:#7a5f00}<br>.v{--c:#b57bff;--d:#3b1380;--m:#6a3cc0;--box:#1c0640}<br>.c{--c:#ffd400;--d:#b00020;--m:#e03a3a;--box:#14001f}<br>.screen.e{--c:#ff3db8;--d:#5c0040;--m:#a0006e;--box:#000;<br>background:repeating-linear-gradient(135deg,rgba(255,61,184,.13) 0 14px,transparent 14px 28px)}<br>.glitch .screen.v.on,.glitch .screen.e.on,.glitch .screen.nogl.on{animation:none}<br>.screen.on{display:flex}</p><p>/* BOX */<br>.box{position:relative;z-index:5;width:min(460px,90vw);max-height:94vh;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:32px 24px;text-align:center;background:var(--box,#000);<br>border:4px solid var(--c);box-shadow:inset 0 0 0 4px var(--box,#000),inset 0 0 0 6px var(--m);<br>clip-path:polygon(0 8px,8px 8px,8px 0,calc(100% - 8px) 0,calc(100% - 8px) 8px,100% 8px,100% calc(100% - 8px),calc(100% - 8px) calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,8px calc(100% - 8px),0 calc(100% - 8px));<br>animation:in .6s steps(5) both}<br>.box.wide{width:min(680px,92vw);text-align:left;max-height:92vh}<br>.box.scroll{max-height:92vh}<br>.title{font-size:clamp(14px,4.4vw,30px);margin-bottom:16px;text-shadow:4px 4px 0 var(--d);word-break:break-word}<br>.title:empty{display:none}<br>.subtitle{font-size:10px;line-height:1.6;margin-bottom:24px;opacity:.8}<br>.ask{font-size:clamp(12px,3.4vw,18px);line-height:1.7;text-shadow:4px 4px 0 var(--d)}<br>.tiny{font-size:7px;margin-top:16px;opacity:.55;line-height:1.8}<br>.error{margin-top:18px;font-size:8px;line-height:1.7;min-height:14px}<br>.cnt{margin-top:14px;font-size:7px;line-height:1.8;opacity:.6}</p><p>/* PIXEL ICONS */<br>.xicon{display:flex;justify-content:center;align-items:center;gap:16px;margin-bottom:18px;color:var(--c);filter:drop-shadow(4px 4px 0 var(--d))}<br>.xicon:empty{display:none}<br>.xicon .b,.xlink .b{fill:var(--box,#000)}<br>.xlink{display:flex;justify-content:center;margin-bottom:18px;color:var(--c);text-decoration:none;filter:drop-shadow(4px 4px 0 var(--d));animation:bob 1s steps(2) infinite}<br>@keyframes bob{50%{transform:translateY(-8px)}}</p><p>input{width:100%;padding:14px 10px;background:#000;color:var(--c);border:4px solid var(--c);outline:none;text-align:center;<br>font:16px "Press Start 2P","Courier New",monospace;letter-spacing:3px;border-radius:0;text-transform:uppercase}<br>input::placeholder{color:var(--m)}<br>input:focus{box-shadow:4px 4px 0 var(--d)}</p><p>.btn{margin-top:18px;padding:14px 22px;background:var(--box,#000);color:var(--c);border:4px solid var(--c);font:12px "Press Start 2P","Courier New",monospace;<br>cursor:pointer;text-decoration:none;display:inline-block;box-shadow:6px 6px 0 var(--d);border-radius:0}<br>.btn:hover{background:var(--c);color:#000}<br>.btn:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--d)}<br>.row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}<br>.qmark{position:absolute;top:14px;right:14px;margin:0;width:36px;height:36px;padding:0;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:4px 4px 0 var(--d)}<br>#snd{position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;margin:0;padding:8px;font-size:8px;border-width:2px;box-shadow:none;opacity:.7;color:#0c0;border-color:#0c0}</p><p>/* LIST + STORY */<br>.emo-list{list-style:none;margin:0 0 6px;padding:0;display:flex;flex-direction:column;gap:16px;text-align:left;font-size:clamp(9px,2.6vw,13px);line-height:1.6}<br>.emo-list li{text-shadow:3px 3px 0 var(--d)}<br>.emo-list li::before{content:"✖ ";color:var(--m)}<br>.emo-list li.k{animation:dim 3s steps(2) infinite}<br>.story-text{font-size:clamp(8px,2.2vw,11px);line-height:2.1}<br>.story-text p{margin:0 0 20px}<br>.box.wide .btn{display:block;width:max-content;margin:24px auto 0}</p><p>/* TIMERS */<br>.date{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}<br>.dateText{font-size:clamp(22px,6vw,56px);text-shadow:6px 6px 0 var(--d)}<br>.countdown{font-size:clamp(16px,4.5vw,46px);margin-top:28px;text-shadow:5px 5px 0 var(--d)}<br>.caption{font-size:clamp(7px,1.4vw,11px);margin-top:20px;line-height:1.8;opacity:.7}<br>.two,.three{margin-top:50px;font-size:clamp(36px,9vw,90px);text-shadow:6px 6px 0 var(--d);color:var(--c);text-decoration:none}<br>.two:hover,.three:hover{animation:blink .4s steps(2) infinite}<br>.coming{font-size:clamp(18px,5.5vw,60px);line-height:1.5;text-shadow:6px 6px 0 var(--d);animation:blink 1.2s steps(2) infinite}<br>.back{position:absolute;z-index:8;left:16px;top:calc(16px + env(safe-area-inset-top,0px));color:var(--m);font-size:9px;text-decoration:none}<br>.back:hover{color:var(--c)}<br>.status{position:absolute;z-index:8;top:calc(16px + env(safe-area-inset-top,0px));right:16px;font-size:8px;opacity:.6}</p><p>/* RAVE */<br>#rave{animation:strobe 1.6s steps(1) infinite;background:#ff1fa8;color:#000}<br>#rave .coming{animation:none;text-shadow:none}<br>#rave .btn{color:#000;border-color:#000;background:transparent;box-shadow:none}<br>@keyframes strobe{0%{background:#ff1fa8}25%{background:#00c21a}50%{background:#d40012}75%{background:#00e5ff}}</p><p>/* BOOT */<br>.boot-title{font-size:clamp(11px,2.6vw,18px);margin-bottom:28px;line-height:1.5}<br>.boot-file{display:flex;align-items:flex-start;gap:14px;font-size:clamp(10px,2.4vw,14px);line-height:1.8;min-height:60px;text-align:left}<br>.file-icon{display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:4px solid var(--c);font-size:12px;flex-shrink:0}<br>.cur{display:inline-block;width:10px;height:14px;background:currentColor;margin-left:6px;vertical-align:middle;animation:blink 1s steps(2) infinite}</p><p>/* GLITCH */<br>.glitch .screen.on{animation:gl .3s steps(2) 1}<br>@keyframes gl{0%{transform:none}25%{transform:translate(-6px,2px);filter:hue-rotate(90deg)}50%{transform:translate(6px,-2px)}75%{transform:translate(-3px,0);filter:none}100%{transform:none}}<br>@keyframes blink{50%{opacity:0}}<br>@keyframes dim{50%{opacity:.4}}<br>@keyframes in{from{opacity:0;transform:scale(.94) translateY(20px)}to{opacity:1;transform:none}}<br>@media(prefers-reduced-motion:reduce){#rave,.xlink{animation:none}.glitch .screen.on,.coming{animation:none}}<br>&lt;/style&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;canvas id="fx"&gt;&lt;/canvas&gt;<br>&lt;canvas id="snow"&gt;&lt;/canvas&gt;<br>&lt;button id="snd" class="btn" type="button"&gt;SND OFF&lt;/button&gt;</p><p>&lt;section id="boot" class="screen"&gt;<br>&lt;div class="box"&gt;<br>&nbsp; &nbsp; &lt;div class="boot-title"&gt;SRW // SYSTEM&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="boot-file"&gt;&lt;span class="file-icon"&gt;✓&lt;/span&gt;&lt;span data-t&gt;UPDATE ALL FILES ARE DELETED, YOU CAN CONTINUE.&lt;/span&gt;&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#pass"&gt;RESUME&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="pass" class="screen"&gt;<br>&nbsp; &lt;div class="box"&gt;<br>&nbsp; &nbsp; &lt;div id="lock" class="xicon"&gt;&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="title"&gt;ACCESS&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="subtitle"&gt;ENTER PASSWORD&lt;/div&gt;<br>&nbsp; &nbsp; &lt;form id="f" autocomplete="off"&gt;<br>&nbsp; &nbsp; &nbsp; &lt;input id="pw" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="PASSWORD"&gt;<br>&nbsp; &nbsp; &nbsp; &lt;div class="row"&gt;&lt;button class="btn" type="submit"&gt;ENTER&lt;/button&gt;&lt;button class="btn" type="button" id="hint"&gt;?&lt;/button&gt;&lt;/div&gt;<br>&nbsp; &nbsp; &lt;/form&gt;<br>&nbsp; &nbsp; &lt;div class="error" id="err"&gt;PASSWORD REQUIRED&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="cnt" id="cnt"&gt;&lt;/div&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="denied" class="screen r"&gt;<br>&nbsp; &lt;div class="box"&gt;<br>&nbsp; &nbsp; &lt;div class="ask"&gt;МГЖ НЕ БУДЕТ&lt;br&gt;ИДИТЕ НАХУЙ&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#pass"&gt;BACK&lt;/a&gt;<br>&nbsp; &nbsp; &lt;div class="tiny"&gt;не тот пароль, но ты близко&lt;/div&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="x" class="screen"&gt;<br>&nbsp; &lt;div class="box"&gt;<br>&nbsp; &nbsp; &lt;div id="xicon" class="xicon"&gt;&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="title"&gt;&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="ask" data-t&gt;&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#pass"&gt;BACK&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="rehab" class="screen c nogl"&gt;<br>&nbsp; &lt;div class="box"&gt;<br>&nbsp; &nbsp; &lt;a id="clownLink" class="xlink" href="#circus"&gt;&lt;/a&gt;<br>&nbsp; &nbsp; &lt;div class="title"&gt;РЕХАБ&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="ask" data-t&gt;ЕБАТЬ ВЫ ДОЛБОЁБЫ&lt;br&gt;ПОВЕЛИСЬ НА РАЗВОД&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="tiny"&gt;нажми на клоуна&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#pass"&gt;BACK&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="circus" class="screen c nogl"&gt;<br>&nbsp; &lt;div class="box"&gt;<br>&nbsp; &nbsp; &lt;a id="tentLink" class="xlink" href="#tent"&gt;&lt;/a&gt;<br>&nbsp; &nbsp; &lt;div class="ask" data-t&gt;ДОБРО ПОЖАЛОВАТЬ&lt;br&gt;В ЦИРК&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="tiny"&gt;нажми на шапито&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#rehab"&gt;BACK&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="tent" class="screen c nogl"&gt;<br>&nbsp; &lt;div class="box"&gt;<br>&nbsp; &nbsp; &lt;div class="title"&gt;ШАПИТО&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="subtitle"&gt;ТУТ ПРЯЧЕТСЯ САМЫЙ СЕКРЕТНЫЙ ПАРОЛЬ&lt;/div&gt;<br>&nbsp; &nbsp; &lt;form id="f2" autocomplete="off"&gt;<br>&nbsp; &nbsp; &nbsp; &lt;input id="pw2" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="???"&gt;<br>&nbsp; &nbsp; &nbsp; &lt;div class="row"&gt;&lt;button class="btn" type="submit"&gt;ENTER&lt;/button&gt;&lt;/div&gt;<br>&nbsp; &nbsp; &lt;/form&gt;<br>&nbsp; &nbsp; &lt;div class="error" id="err2"&gt;&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#circus"&gt;BACK&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="prize" class="screen c nogl"&gt;<br>&nbsp; &lt;div class="box"&gt;<br>&nbsp; &nbsp; &lt;div id="prizeIcon" class="xicon"&gt;&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="title"&gt;ПОЗДРАВЛЯЕМ!&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="ask" data-t&gt;МОЛОДЕЦ, ТЫ УЧАСТВУЕШЬ В РОЗЫГРЫШЕ.&lt;br&gt;&lt;br&gt;СКИНЬ СКРИН И БУДЕШЬ В ЧИСЛЕ УЧАСТНИКОВ.&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="tiny"&gt;приз — наше уважение&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#pass"&gt;НА ГЛАВНУЮ&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="nostalgia" class="screen"&gt;<br>&nbsp; &lt;div class="box"&gt;<br>&nbsp; &nbsp; &lt;div class="ask" data-t&gt;ГОТОВ ВСПОМНИТЬ&lt;br&gt;КАК ВСЁ НАЧАЛОСЬ?&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#emo"&gt;ДА&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="emo" class="screen p"&gt;<br>&nbsp; &lt;div class="box scroll"&gt;<br>&nbsp; &nbsp; &lt;a class="btn qmark" href="#story"&gt;?&lt;/a&gt;<br>&nbsp; &nbsp; &lt;div class="title"&gt;2024&lt;/div&gt;<br>&nbsp; &nbsp; &lt;ul class="emo-list"&gt;<br>&nbsp; &nbsp; &nbsp; &lt;li&gt;я не знаю&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp; &lt;li class="k"&gt;дом&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp; &lt;li&gt;иди нахуй&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp; &lt;li class="k"&gt;genre change&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp; &lt;li&gt;the first and last slow&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp; &lt;li class="k"&gt;six months longing&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp; &lt;li&gt;THE LAST TIME BUT STRONG&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp; &lt;li class="k"&gt;who am I&lt;/li&gt;<br>&nbsp; &nbsp; &lt;/ul&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#pass"&gt;КОНЕЦ&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="story" class="screen p"&gt;<br>&nbsp; &lt;div class="box wide"&gt;<br>&nbsp; &nbsp; &lt;div class="story-text" data-t&gt;&lt;p&gt;2024 год — я только начал заниматься музыкой. Признаюсь, тогда я был не самым приятным человеком, и ничто не может меня оправдать. Однако я благодарен тому времени, потому что оно показало мне, кто были мои настоящие друзья.&lt;/p&gt;&lt;p&gt;Я хочу выразить благодарность всем, кто остался со мной. Эти два года я упорно работал над новым материалом. Я вернул свой старый звук и вернулся к истокам. Впереди нас ждёт много нового и интересного.Всё останется прежним, изменится только название. Пусть SRW будет для вас как SunREW.&lt;/p&gt;&lt;p&gt;Ну что, друзья, давайте! Рейв — это сила!&lt;/p&gt;&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#emo"&gt;НАЗАД&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="ravewarn" class="screen y"&gt;<br>&nbsp; &lt;div class="date"&gt;<br>&nbsp; &nbsp; &lt;div class="ask"&gt;⚠ ВНИМАНИЕ&lt;br&gt;&lt;br&gt;МИГАЮЩИЕ ОГНИ&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="row"&gt;&lt;a class="btn" href="#rave"&gt;ПОЕХАЛИ&lt;/a&gt;&lt;a class="btn" href="#pass"&gt;НЕ НАДО&lt;/a&gt;&lt;/div&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="rave" class="screen"&gt;<br>&nbsp; &lt;div class="date"&gt;<br>&nbsp; &nbsp; &lt;div class="coming"&gt;РЕЙВ —&lt;br&gt;ЭТО СИЛА!&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#pass"&gt;EXIT&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="spoiler" class="screen"&gt;<br>&nbsp; &lt;div class="date"&gt;&lt;a class="btn" href="#date1"&gt;SPOILER&lt;/a&gt;&lt;/div&gt;<br>&nbsp; &lt;div class="status"&gt;SRW // AUTHORIZED&lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="date1" class="screen"&gt;<br>&nbsp; &lt;div class="date"&gt;<br>&nbsp; &nbsp; &lt;div class="dateText"&gt;17.07.27&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div id="t1" class="countdown"&gt;00:00:00:00&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="caption"&gt;DAYS : HOURS : MINUTES : SECONDS&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="two" href="#date2"&gt;2&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&nbsp; &lt;div class="status"&gt;TARGET 01&lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="date2" class="screen"&gt;<br>&nbsp; &lt;div class="date"&gt;<br>&nbsp; &nbsp; &lt;div class="dateText"&gt;30.07.27&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div id="t2" class="countdown"&gt;00:00:00:00&lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="caption"&gt;DAYS : HOURS : MINUTES : SECONDS&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="three" href="#coming"&gt;3&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&nbsp; &lt;a class="back" href="#date1"&gt;BACK&lt;/a&gt;<br>&nbsp; &lt;div class="status"&gt;TARGET 02&lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="coming" class="screen r"&gt;<br>&nbsp; &lt;div class="date"&gt;<br>&nbsp; &nbsp; &lt;div class="coming" data-t&gt;SRW&lt;br&gt;IT'S COMING&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#thanks"&gt;NEXT&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="thanks" class="screen p"&gt;<br>&nbsp; &lt;div class="date"&gt;<br>&nbsp; &nbsp; &lt;div class="coming" data-t&gt;СПАСИБО&lt;br&gt;ЗА ОЖИДАНИЕ&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#links"&gt;ДАЛЕЕ&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;section id="links" class="screen"&gt;<br>&nbsp; &lt;div class="date"&gt;<br>&nbsp; &nbsp; &lt;div class="title"&gt;FIND US&lt;/div&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="https://t.me/SRW1526" target="_blank" rel="noopener"&gt;TELEGRAM&lt;/a&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="https://open.spotify.com/artist/0FLoXww3qz9YWgwAswKQd6" target="_blank" rel="noopener"&gt;SPOTIFY&lt;/a&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="https://www.instagram.com/sunrew1526" target="_blank" rel="noopener"&gt;INSTAGRAM&lt;/a&gt;<br>&nbsp; &nbsp; &lt;a class="btn" href="#thanks"&gt;BACK&lt;/a&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;</p><p>&lt;script&gt;<br>const $=id=&gt;document.getElementById(id);<br>function cur(){const e=document.getElementById((location.hash||"#boot").slice(1));return e&amp;&amp;e.classList.contains("screen")?e:$("boot")}</p><p>/* TELEGRAM MINI APP (active only inside Telegram) */<br>const tg=(window.Telegram&amp;&amp;Telegram.WebApp&amp;&amp;Telegram.WebApp.initData)?Telegram.WebApp:null;<br>const ver=v=&gt;{try{return tg.isVersionAtLeast(v)}catch(_){return false}};<br>if(tg){<br>&nbsp; try{tg.ready();tg.expand()}catch(_){}<br>&nbsp; try{tg.setHeaderColor("#000000");tg.setBackgroundColor("#000000")}catch(_){}<br>&nbsp; if(ver("7.10"))try{tg.setBottomBarColor("#000000")}catch(_){}<br>&nbsp; if(ver("7.7"))try{tg.disableVerticalSwipes()}catch(_){}<br>&nbsp; if(ver("6.1"))try{tg.BackButton.onClick(()=&gt;history.back())}catch(_){}<br>}<br>function syncBack(){<br>&nbsp; if(!tg||!ver("6.1"))return;<br>&nbsp; const s=cur();<br>&nbsp; try{(s&amp;&amp;s.id!=="boot")?tg.BackButton.show():tg.BackButton.hide()}catch(_){}<br>}<br>/* haptics: Telegram feedback if available, else vibration */<br>function buzz(k){<br>&nbsp; if(tg&amp;&amp;tg.HapticFeedback){<br>&nbsp; &nbsp; try{<br>&nbsp; &nbsp; &nbsp; if(k==="err")tg.HapticFeedback.notificationOccurred("error");<br>&nbsp; &nbsp; &nbsp; else if(k==="red")tg.HapticFeedback.notificationOccurred("warning");<br>&nbsp; &nbsp; &nbsp; else tg.HapticFeedback.impactOccurred("light");<br>&nbsp; &nbsp; }catch(_){}<br>&nbsp; &nbsp; return;<br>&nbsp; }<br>&nbsp; if(navigator.vibrate)navigator.vibrate(k==="err"?120:k==="red"?[80,40,80]:10);<br>}<br>/* external links open through Telegram */<br>addEventListener("click",e=&gt;{<br>&nbsp; const a=e.target.closest("a[target=_blank]");<br>&nbsp; if(!a||!tg)return;<br>&nbsp; e.preventDefault();<br>&nbsp; const u=a.href;<br>&nbsp; try{/^https:\/\/t\.me\//.test(u)?tg.openTelegramLink(u):tg.openLink(u)}<br>&nbsp; catch(_){window.open(u,"_blank")}<br>});</p><p>/* COUNTDOWN (shows IT'S HERE at zero) */<br>function cd(id,t){<br>&nbsp; const el=$(id);<br>&nbsp; const f=()=&gt;{<br>&nbsp; &nbsp; const ms=new Date(t)-Date.now();<br>&nbsp; &nbsp; if(ms&lt;=0){el.textContent="IT'S HERE";return}<br>const v=[Math.floor(ms/864e5),Math.floor(ms/36e5)%24,Math.floor(ms/6e4)%60,Math.floor(ms/1e3)%60];<br>&nbsp; &nbsp; el.textContent=v.map(n=&gt;String(n).padStart(2,"0")).join(":");<br>&nbsp; };<br>&nbsp; f();setInterval(f,1000);<br>}<br>cd("t1","2027-07-17T00:00:00");<br>cd("t2","2027-07-30T00:00:00");</p><p>/* SOUND (8-bit, off by default) */<br>let ac,on=false;<br>function beep(f,d=.06,t="square"){<br>&nbsp; if(!on)return;<br>&nbsp; const o=ac.createOscillator(),g=ac.createGain();<br>&nbsp; o.type=t;o.frequency.value=f;g.gain.value=.05;<br>&nbsp; o.connect(g);g.connect(ac.destination);o.start();<br>&nbsp; g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+d);o.stop(ac.currentTime+d);<br>}<br>$("snd").onclick=()=&gt;{<br>&nbsp; on=!on;<br>&nbsp; if(on&amp;&amp;!ac)ac=new(window.AudioContext||window.webkitAudioContext)();<br>&nbsp; $("snd").textContent="SND "+(on?"ON":"OFF");beep(660);<br>};<br>addEventListener("click",e=&gt;{<br>&nbsp; if(e.target.closest(".btn")&amp;&amp;e.target.id!=="snd"){beep(520);if(tg)buzz("tap")}<br>});</p><p>/* TYPEWRITER */<br>document.querySelectorAll("[data-t]").forEach(e=&gt;e.dataset.t=e.innerHTML);<br>let tt;<br>function typeIn(root){<br>&nbsp; clearInterval(tt);<br>&nbsp; const els=[...root.querySelectorAll("[data-t]")];<br>&nbsp; els.forEach(e=&gt;e.innerHTML="");<br>&nbsp; let k=0,i=0;<br>&nbsp; tt=setInterval(()=&gt;{<br>&nbsp; &nbsp; const e=els[k];<br>&nbsp; &nbsp; if(!e){clearInterval(tt);return}<br>&nbsp; &nbsp; const h=e.dataset.t,n=Math.ceil(h.length/250);<br>&nbsp; &nbsp; for(let j=0;j&lt;n&amp;&amp;i&lt;h.length;j++){if(h[i]==="&lt;")i=h.indexOf("&gt;",i);i++}<br>&nbsp; &nbsp; if(i&gt;=h.length){e.innerHTML=h;k++;i=0}<br>&nbsp; &nbsp; else e.innerHTML=h.slice(0,i)+'&lt;i class="cur"&gt;&lt;/i&gt;';<br>&nbsp; },28);<br>}</p><p>/* ROUTING: show screen, glitch, typing, red-screen buzz + haptics */<br>function route(){<br>&nbsp; const b=document.body;<br>&nbsp; b.classList.remove("glitch");void b.offsetWidth;b.classList.add("glitch");<br>&nbsp; const sc=cur();<br>&nbsp; document.querySelectorAll(".screen").forEach(x=&gt;x.classList.toggle("on",x===sc));<br>&nbsp; typeIn(sc);<br>&nbsp; syncBack();<br>&nbsp; if(sc.classList.contains("r")){beep(90,.3,"sawtooth");buzz("red")}<br>&nbsp; if(sc.classList.contains("c")){beep(784,.12)}<br>}<br>addEventListener("hashchange",route);</p><p>/* PIXEL ICONS: px(width,height,[[x,y,w,h,'b'?]],scale). 'b' = cut-out (box colour) */<br>const px=(w,h,r,s)=&gt;`&lt;svg viewBox="0 0 ${w} ${h}" width="${w*s}" height="${h*s}" shape-rendering="crispEdges" fill="currentColor"&gt;${r.map(a=&gt;`&lt;rect x="${a[0]}" y="${a[1]}" width="${a[2]}" height="${a[3]}"${a[4]?' class="b"':""}/&gt;`).join("")}&lt;/svg&gt;`;<br>const ICONS={<br>&nbsp; hat:px(16,13,[[3,0,3,6],[10,0,3,6],[4,1,1,4,1],[11,1,1,4,1],[2,6,12,4],[1,10,14,3],[3,11,1,1,1],[6,11,1,1,1],[9,11,1,1,1],[12,11,1,1,1]],6),<br>&nbsp; heart:px(7,6,[[1,0,2,1],[4,0,2,1],[0,1,7,2],[1,3,5,1],[2,4,3,1],[3,5,1,1]],12),<br>&nbsp; skull:px(8,7,[[2,0,4,1],[1,1,6,1],[0,2,8,3],[1,3,2,2,1],[5,3,2,2,1],[1,5,6,1],[2,6,4,1],[3,6,1,1,1]],11),<br>&nbsp; star:px(7,7,[[3,0,1,2],[0,2,7,1],[1,3,5,1],[2,4,3,1],[1,5,2,1],[4,5,2,1],[1,6,1,1],[5,6,1,1]],12),<br>&nbsp; earring:px(7,11,[[2,0,3,1],[1,1,1,2],[5,1,1,2],[2,3,3,1],[3,4,1,2],[3,6,1,1],[2,7,3,1],[1,8,5,1],[2,9,3,1],[3,10,1,1]],8),<br>&nbsp; guitar:px(12,11,[[10,0,2,1],[9,1,2,1],[8,2,2,1],[7,3,2,1],[6,4,2,1],[4,5,4,1],[3,6,5,1],[2,7,5,1],[1,8,6,1],[1,9,5,1],[2,10,3,1],[4,7,1,1,1],[3,8,1,1,1]],8),<br>&nbsp; lock:px(7,8,[[2,0,3,1],[1,1,1,2],[5,1,1,2],[0,3,7,5],[3,4,1,2,1]],7),<br>&nbsp; ghost:px(8,8,[[2,0,4,1],[1,1,6,1],[0,2,8,5],[0,7,2,1],[3,7,2,1],[6,7,2,1],[2,3,1,2,1],[5,3,1,2,1]],10),<br>&nbsp; bolt:px(6,8,[[3,0,3,1],[2,1,3,1],[1,2,3,1],[1,3,5,1],[2,4,3,1],[2,5,2,1],[1,6,2,1],[1,7,1,1]],10),<br>&nbsp; moon:px(7,8,[[2,0,3,1],[1,1,5,1],[0,2,7,4],[1,6,5,1],[2,7,3,1],[4,1,2,1,1],[3,2,4,3,1],[4,5,2,1,1]],10),<br>&nbsp; crown:px(9,6,[[0,0,1,1],[4,0,1,1],[8,0,1,1],[0,1,2,1],[3,1,3,1],[7,1,2,1],[0,2,9,3],[2,3,1,1,1],[4,3,1,1,1],[6,3,1,1,1],[0,5,9,1]],10),<br>&nbsp; /* circus: clown face + big top tent */<br>&nbsp; clown:px(11,10,[[0,2,2,4],[9,2,2,4],[2,0,7,2],[2,2,7,7],[3,9,5,1],[3,3,1,2,1],[7,3,1,2,1],[4,5,3,2,1],[5,5,1,2],[3,7,1,1,1],[4,8,3,1,1],[7,7,1,1,1]],9),<br>&nbsp; tent:px(13,11,[[6,0,1,2],[7,0,3,1],[6,2,1,1],[5,3,3,1],[4,4,5,1],[3,5,7,1],[2,6,9,1],[1,7,11,1],[0,8,13,3],[5,9,3,2,1],[5,4,1,3,1],[7,4,1,3,1]],9)<br>};<br>ICONS.emo=ICONS.earring+ICONS.guitar+ICONS.earring;<br>$("lock").innerHTML=ICONS.lock;<br>$("clownLink").innerHTML=ICONS.clown;<br>$("tentLink").innerHTML=ICONS.tent;<br>$("prizeIcon").innerHTML=ICONS.star;<br>/* PASSWORDS: 9 route passwords + 91 secret windows = 100<br>&nbsp; &nbsp;SEC format: [theme, title, text, icon, fx]<br>&nbsp; &nbsp;themes: "" green, p pink, y yellow, r red, v purple, e emo pink-black<br>&nbsp; &nbsp;fx: sq stars snow leaves petals rain conf (default comes from theme) */<br>const GO={"1526":"#spoiler","333":"#denied","2024":"#nostalgia","170727":"#date1","300727":"#date2","RAVE":"#ravewarn","РЕЙВ":"#ravewarn","РЕХАБ":"#rehab","67":"#prize"};<br>const SEC={<br>&nbsp; /* digits */<br>&nbsp; "666":["r","666","ТЫ ВЫЗВАЛ&lt;br&gt;НЕ ТОГО.","skull"],<br>&nbsp; "777":["y","JACKPOT","ПРИЗА НЕТ.&lt;br&gt;НО ТЫ ПОВЕЗУЧИЙ.","star"],<br>&nbsp; "0000":["r","СЕРЬЁЗНО?","НУ ТЫ И ТУПОЙ."],<br>&nbsp; "1234":["r","СЕРЬЁЗНО?","НУ ТЫ И ТУПОЙ."],<br>&nbsp; "12345":["r","12345","НУ НЕТ."],<br>&nbsp; "123456":["r","123456","ДАЖЕ НЕ ПЫТАЙСЯ."],<br>&nbsp; "1":["r","1","ДИМА ЗАЕБАЛ&lt;br&gt;СЛУШАТЬ ХУЙНЮ"],<br>&nbsp; "15":["","15","ПОЛОВИНА ПАРОЛЯ.&lt;br&gt;ЕСТЬ ЕЩЁ 26."],<br>&nbsp; "26":["","26","ВТОРАЯ ПОЛОВИНА.&lt;br&gt;ПЕРВАЯ — 15."],<br>&nbsp; "42":["y","42","ОТВЕТ НА ГЛАВНЫЙ&lt;br&gt;ВОПРОС ВСЕЛЕННОЙ."],<br>&nbsp; "69":["r","69","НУ ТЫ И ШКОЛЬНИК."],<br>&nbsp; "007":["","007","АГЕНТ SRW&lt;br&gt;НА СВЯЗИ."],<br>&nbsp; "111":["y","111","СЧАСТЛИВЫЙ ЧАС.&lt;br&gt;ЗАГАДАЙ ЖЕЛАНИЕ."],<br>&nbsp; "404":["r","404","ТУТ НИЧЕГО НЕТ.&lt;br&gt;ИЛИ ЕСТЬ?"],<br>&nbsp; "31337":["y","31337","ХАКЕР?&lt;br&gt;СЕРЬЁЗНО?"],<br>&nbsp; /* years */<br>&nbsp; "2007":["e","2007","ЧЁЛКА НА ГЛАЗА.&lt;br&gt;ВСЁ ПО-ЭМО.","emo"],<br>&nbsp; "2008":["e","2008","ДРУЗЬЯ В TOP 8.&lt;br&gt;ЧЁЛКА ЕЩЁ ДЛИННЕЕ.","emo"],<br>&nbsp; "MYSPACE":["e","MYSPACE","TOP 8 — ЭТО&lt;br&gt;СЕРЬЁЗНО.","emo"],<br>&nbsp; "ГИТАРА":["e","ГИТАРА","ТРИ АККОРДА&lt;br&gt;И МНОГО ЧУВСТВ.","emo"],<br>&nbsp; "СЕРЁЖКИ":["e","СЕРЁЖКИ","ПЕРВЫЙ ПРОКОЛ.&lt;br&gt;САМЫЙ ВАЖНЫЙ.","emo"],<br>&nbsp; "ЧЁЛКА":["e","ЧЁЛКА","НИЧЕГО НЕ ВИДНО.&lt;br&gt;И ПУСТЬ.","emo"],<br>&nbsp; "ЧЕЛКА":["e","ЧЁЛКА","НИЧЕГО НЕ ВИДНО.&lt;br&gt;И ПУСТЬ.","emo"],<br>&nbsp; "2010":["","2010","КЛИПЫ ПО ТВ.&lt;br&gt;ТРЕКИ НА ТЕЛЕФОНЕ."],<br>&nbsp; "2012":["r","2012","КОНЕЦ СВЕТА&lt;br&gt;ОТМЕНИЛИ."],<br>&nbsp; "2018":["","2018","ТОГДА ВСЁ&lt;br&gt;БЫЛО ПРОЩЕ."],<br>&nbsp; "2019":["y","2019","ПОСЛЕДНИЙ&lt;br&gt;НОРМАЛЬНЫЙ ГОД."],<br>&nbsp; "2020":["y","2020","КАК ТАМ&lt;br&gt;НА КАРАНТИНЕ?"],<br>&nbsp; "КАРАНТИН":["y","2020","КАК ТАМ&lt;br&gt;НА КАРАНТИНЕ?"],<br>&nbsp; "2021":["v","2004","ЗИМА ПРАВДА&lt;br&gt;БЫЛА ТЁПЛОЙ","hat"],<br>&nbsp; "ЗИМА":["v","2004","ЗИМА ПРАВДА&lt;br&gt;БЫЛА ТЁПЛОЙ","hat"],<br>&nbsp; "ШАПКА":["v","ШАПКА","С УШКАМИ.&lt;br&gt;КАК И ДОЛЖНО БЫТЬ.","hat"],<br>&nbsp; "ЗАЙЧИК":["v","ЗАЙЧИК","ТУК-ТУК.&lt;br&gt;ТЫ НАШЁЛ ЗАЙЧИКА.","hat"],<br>&nbsp; "2022":["","2022","ВСЁ ПОМЕНЯЛОСЬ.&lt;br&gt;И МЫ ТОЖЕ."],<br>&nbsp; "2023":["p","2023","ТИХО.&lt;br&gt;ПОДОЗРИТЕЛЬНО ТИХО."],<br>&nbsp; "2025":["p","2025","ТИХИЙ ГОД.&lt;br&gt;ВСЁ ГОТОВИЛОСЬ."],<br>&nbsp; "2026":["p","2026","ДВА ГОДА РАБОТЫ.&lt;br&gt;ОСТАЛОСЬ СОВСЕМ НЕМНОГО."],<br>&nbsp; "2027":["r","2027","ОНО БЛИЗКО."],<br>&nbsp; "2028":["r","2028","ДАЛЕКО.&lt;br&gt;ДАЖЕ ДЛЯ НАС."],<br>&nbsp; /* names + words */<br>&nbsp; "SRW":["","SRW","ТЫ БЛИЗКО.&lt;br&gt;ПОПРОБУЙ ДОБАВИТЬ ЦИФРЫ."],<br>&nbsp; "SRW1526":["y","SRW1526","ПОЧТИ.&lt;br&gt;ПРОСТО 1526."],<br>&nbsp; "SUNREW":["y","SUNREW","ВСЁ ОСТАЁТСЯ ПРЕЖНИМ.&lt;br&gt;МЕНЯЕТСЯ ТОЛЬКО НАЗВАНИЕ."],<br>&nbsp; "SUNREW1526":["y","SUNREW1526","ПОЛНОЕ ИМЯ.&lt;br&gt;ТЫ СВОЙ."],<br>&nbsp; "SUN":["y","SUN","СОЛНЦЕ УЖЕ&lt;br&gt;ВСХОДИТ."],<br>&nbsp; "REW":["y","REW","ПЕРЕМОТКА&lt;br&gt;НАЗАД."],<br>&nbsp; "ДОМ":["","ДОМ","ДОМ — ТАМ,&lt;br&gt;ГДЕ ТВОИ ЛЮДИ."],<br>&nbsp; "DOM":["","ДОМ","ДОМ — ТАМ,&lt;br&gt;ГДЕ ТВОИ ЛЮДИ."],<br>&nbsp; "ДИМА":["r","ДИМА","ГОНДОН"],<br>&nbsp; "ДИМА ХОРОШИЙ":["r","ДИМА","НЕТ. ГОНДОН."],<br>&nbsp; "ИДИ НАХУЙ":["r","","САМ ИДИ НАХУЙ"],<br>&nbsp; "МГЖ":["r","МГЖ","МГЖ НЕ БУДЕТ.&lt;br&gt;СМИРИСЬ."],<br>&nbsp; "БРО":["","БРО","БРО."],<br>&nbsp; "ПРИВЕТ":["","ПРИВЕТ","ДАВНО ЖДЁМ."],<br>&nbsp; "HELLO":["","HELLO","...HELLO?"],<br>&nbsp; "ПОКА":["","ПОКА","ЕЩЁ УВИДИМСЯ."],<br>&nbsp; "ДА":["r","","НЕТ."],<br>&nbsp; "НЕТ":["","","ДА."],<br>&nbsp; "ПАРОЛЬ":["y","ПАРОЛЬ","ЭТО НЕ ПАРОЛЬ."],<br>&nbsp; "PASSWORD":["r","PASSWORD","СЛИШКОМ ОЧЕВИДНО."],<br>&nbsp; "QWERTY":["r","QWERTY","ТЫ СЕРЬЁЗНО?"],<br>&nbsp; "ДРУЗЬЯ":["p","ДРУЗЬЯ","СПАСИБО,&lt;br&gt;ЧТО ОСТАЛИСЬ."],<br>&nbsp; "ЭМО":["p","ЭМО","НЕ ПЛАЧЬ.&lt;br&gt;ТАНЦУЙ."],<br>&nbsp; "ПИКСЕЛЬ":["","ПИКСЕЛЬ","ВСЁ ЗДЕСЬ СДЕЛАНО&lt;br&gt;ИЗ КВАДРАТИКОВ."],<br>&nbsp; "ГРУСТЬ":["p","ГРУСТЬ","ЭТО ТОЖЕ&lt;br&gt;ЧАСТЬ ЗВУКА.","","rain"],<br>&nbsp; "ПРИЗРАК":["","ПРИЗРАК","ТЫ НИКОГО&lt;br&gt;НЕ ВИДЕЛ.","ghost"],<br>&nbsp; "МОЛНИЯ":["y","МОЛНИЯ","ЭНЕРГИИ ХВАТИТ&lt;br&gt;НА ВЕСЬ РЕЙВ.","bolt"],<br>&nbsp; "ЛУНА":["","ЛУНА","НОЧЬЮ ЗВУЧИТ&lt;br&gt;ЛУЧШЕ.","moon","stars"],<br>&nbsp; "КОРОНА":["y","КОРОНА","НЕ ДЛЯ ВСЕХ.&lt;br&gt;ТОЛЬКО ДЛЯ СВОИХ.","crown"],<br>&nbsp; "БИТ":["","БИТ","СЕРДЦЕБИЕНИЕ&lt;br&gt;ВСЕГО ТРЕКА."],<br>&nbsp; "ДРОП":["r","ДРОП","ЖДЁМ ДРОП.&lt;br&gt;СКОРО."],<br>"ТИЗЕР":["y","ТИЗЕР","ЕЩЁ РАНО.&lt;br&gt;НО БЛИЗКО."],<br>&nbsp; /* seasons + time of day */<br>&nbsp; "ВЕСНА":["p","ВЕСНА","ВСЁ НАЧИНАЕТСЯ&lt;br&gt;ЗАНОВО.","","petals"],<br>&nbsp; "ЛЕТО":["y","ЛЕТО","САМОЕ ГРОМКОЕ&lt;br&gt;ВРЕМЯ ГОДА."],<br>&nbsp; "ОСЕНЬ":["y","ОСЕНЬ","ЛУЧШЕЕ ВРЕМЯ&lt;br&gt;ДЛЯ ГРУСТНЫХ ТРЕКОВ.","","leaves"],<br>&nbsp; "НОЧЬ":["","НОЧЬ","ЛУЧШЕЕ ВРЕМЯ&lt;br&gt;ДЛЯ МУЗЫКИ.","","stars"],<br>&nbsp; "ТИШИНА":["","ТИШИНА","..."],<br>&nbsp; /* tracks + 2024 list */<br>&nbsp; "Я НЕ ЗПНЮ":["p","Я НЕ ЗПНЮ","ЭТО НАЗВАНИЕ БЫЛО ПРИДУМАНО СЛУЧАЙНО&lt;br&gt;И СТАЛО САМЫМ ПОПУЛЯРНЫМ ТРЕКОМ"],<br>&nbsp; "WHO AM I":["p","WHO AM I","ТОТ, КТО ВЕРНУЛСЯ&lt;br&gt;К ИСТОКАМ."],<br>&nbsp; "GENRE CHANGE":["p","GENRE CHANGE","СТАРЫЙ ЗВУК.&lt;br&gt;НОВЫЙ ПУТЬ."],<br>&nbsp; "SIX MONTHS LONGING":["p","SIX MONTHS LONGING","ПОЛГОДА ТИШИНЫ.&lt;br&gt;ТЕПЕРЬ ГРОМКО."],<br>&nbsp; "THE LAST TIME BUT STRONG":["p","THE LAST TIME","ПОСЛЕДНИЙ РАЗ.&lt;br&gt;НО ГРОМЧЕ."],<br>&nbsp; "THE FIRST AND LAST SLOW":["p","FIRST AND LAST","САМЫЙ ТИХИЙ ТРЕК."],<br>&nbsp; "СТАРЫЙ ЗВУК":["y","СТАРЫЙ ЗВУК","ВЕРНУЛСЯ К ИСТОКАМ."],<br>&nbsp; "МУЗЫКА":["","МУЗЫКА","ВСЁ НАЧАЛОСЬ С НЕЁ."],<br>&nbsp; "ЛЮБОВЬ":["p","ЛЮБОВЬ","ОНА БЫЛА&lt;br&gt;ВСЁ ЭТО ВРЕМЯ.","heart"],<br>&nbsp; "LOVE":["p","LOVE","ОНА БЫЛА&lt;br&gt;ВСЁ ЭТО ВРЕМЯ.","heart"],<br>&nbsp; "SPOTIFY":["","SPOTIFY","СКОРО ТАМ."],<br>&nbsp; "АЛЬБОМ":["y","АЛЬБОМ","ЕЩЁ НЕ ВРЕМЯ.&lt;br&gt;НО СКОРО."],<br>&nbsp; /* jokes + meta */<br>&nbsp; "ADMIN":["r","ADMIN","ТЫ НЕ АДМИН."],<br>&nbsp; "HELP":["y","HELP","НАЖМИ «?»&lt;br&gt;НА ЭКРАНЕ ПАРОЛЯ."],<br>&nbsp; "SECRET":["y","SECRET","ВСЕ ПАРОЛИ — СЕКРЕТ."],<br>&nbsp; "THANKS":["p","THANKS","СПАСИБО,&lt;br&gt;ЧТО ТЫ ЗДЕСЬ."]<br>};<br>const HINTS=["ЦИФРЫ ПОМНЯТ ДАТЫ","СЛОВА ЖИВУТ В СПИСКЕ 2024","ИМЯ, КОТОРОЕ СМЕНИЛОСЬ","НЕ ВСЕ ПАРОЛИ ВЕДУТ ВПЕРЁД","ЕСТЬ СЛОВО, ОТ КОТОРОГО ТРЯСЁТ ПОЛ","КАЖДЫЙ ГОД — ПАРОЛЬ","ДАЖЕ ПРОСТЫЕ СЛОВА РАБОТАЮТ","ЗИМА БЫЛА ТЁПЛОЙ","ЧЁЛКА, СЕРЁЖКИ И ГИТАРА","НОЧЬЮ ВИДНО ЛУНУ","КТО-ТО ЗДЕСЬ ЕСТЬ, НО ЕГО НЕ ВИДНО","ЕСТЬ МЕСТО, ГДЕ ЛЕЧАТ ОТ ВСЕГО","САМЫЙ СЕКРЕТНЫЙ — ДВЕ ЦИФРЫ","СЕНТЯБРЬ ГОРИТ"];<br>let hi=0;<br>const say=(t,bad)=&gt;{$("err").textContent=t;$("err").style.color=bad?"#f33":""};</p><p>/* SECRETS COUNTER (remembers what you found) */<br>const TOTAL=Object.keys(GO).length+Object.keys(SEC).length;<br>let found=new Set();<br>try{found=new Set(JSON.parse(localStorage.getItem("srw_found")||"[]").filter(k=&gt;k in GO||k in SEC))}catch(_){}<br>function upd(){<br>&nbsp; $("cnt").textContent=found.size&gt;=TOTAL?"ALL "+TOTAL+" FOUND. ТЫ ЛЕГЕНДА.":"SECRETS FOUND "+found.size+"/"+TOTAL;<br>}<br>function mark(v){<br>&nbsp; found.add(v);<br>&nbsp; try{localStorage.setItem("srw_found",JSON.stringify([...found]))}catch(_){}<br>&nbsp; upd();<br>}<br>upd();</p><p>$("hint").onclick=()=&gt;say(HINTS[hi++%HINTS.length]);<br>$("f").onsubmit=e=&gt;{<br>&nbsp; e.preventDefault();<br>&nbsp; const v=$("pw").value.trim().toUpperCase().replace(/\s+/g," ");<br>&nbsp; $("pw").value="";<br>&nbsp; if(GO[v]){mark(v);say("PASSWORD REQUIRED");location.hash=GO[v];return}<br>&nbsp; if(SEC[v]){<br>&nbsp; &nbsp; mark(v);<br>&nbsp; &nbsp; const [th,title,txt,ic,fx]=SEC[v],s=$("x");<br>&nbsp; &nbsp; s.className="screen "+th+" on";<br>&nbsp; &nbsp; if(fx)s.dataset.fx=fx;else delete s.dataset.fx;<br>&nbsp; &nbsp; $("xicon").innerHTML=ic?ICONS[ic]:"";<br>&nbsp; &nbsp; s.querySelector(".title").textContent=title;<br>&nbsp; &nbsp; s.querySelector("[data-t]").dataset.t=txt;<br>&nbsp; &nbsp; say("PASSWORD REQUIRED");<br>&nbsp; &nbsp; if(location.hash==="#x")route();else location.hash="#x";<br>&nbsp; &nbsp; return;<br>&nbsp; }<br>&nbsp; say("ACCESS DENIED",true);beep(110,.25,"sawtooth");buzz("err");<br>};</p><p>/* SECRET PASSWORD INSIDE THE CIRCUS TENT */<br>$("f2").onsubmit=e=&gt;{<br>&nbsp; e.preventDefault();<br>&nbsp; const v=$("pw2").value.trim();<br>&nbsp; $("pw2").value="";<br>&nbsp; if(v==="67"){mark("67");$("err2").textContent="";location.hash="#prize";return}<br>&nbsp; $("err2").textContent="НЕ ТО. КЛОУНЫ ЗАГОГОЧУТ.";<br>&nbsp; $("err2").style.color="#f33";<br>&nbsp; beep(110,.25,"sawtooth");buzz("err");<br>};</p><p>/* PER-WINDOW VISUALS<br>&nbsp; &nbsp;sq: pixel squares | stars: twinkle | snow | leaves + rain | petals | rain | conf: confetti */<br>const cv=$("fx"),cx=cv.getContext("2d"),sn=$("snow"),sx=sn.getContext("2d");<br>let W,H;<br>const P=Array.from({length:70},()=&gt;({x:Math.random(),y:Math.random(),s:4+(Math.random()*8|0),v:.3+Math.random()*1.2}));<br>const F=Array.from({length:110},()=&gt;({x:Math.random(),y:Math.random(),s:[4,4,4,8,8,12][Math.random()*6|0],v:.4+Math.random()*.9,p:Math.random()*6.28,k:Math.random()*6|0}));<br>const FXMAP={v:"snow",e:"leaves",c:"conf",y:"stars"};<br>const BG={snow:"#1c0640",leaves:"#150805",conf:"#0d0014",petals:"#14000d",rain:"#05070f"};<br>const COL={<br>&nbsp; leaves:["#d9480f","#f08c00","#c92a2a","#e8590c","#ffd43b"],<br>&nbsp; conf:["#ff1fa8","#00e5ff","#ffd400","#00c21a","#ff3b3b","#b57bff"],<br>&nbsp; petals:["#ffb3d9","#ff80c0","#ffe0f0"]<br>};<br>const SP={snow:.004,leaves:.005,conf:.006,petals:.003};<br>function fxOf(sc){<br>&nbsp; if(sc.dataset.fx)return sc.dataset.fx;<br>&nbsp; for(const k in FXMAP)if(sc.classList.contains(k))return FXMAP[k];<br>&nbsp; return "sq";<br>}<br>function rs(){W=cv.width=sn.width=innerWidth;H=cv.height=sn.height=innerHeight}<br>rs();addEventListener("resize",rs);<br>route();<br>(function loop(t=0){<br>&nbsp; const sc=cur(),fx=fxOf(sc);<br>&nbsp; cx.globalAlpha=1;cx.fillStyle=BG[fx]||"#000";cx.fillRect(0,0,W,H);<br>&nbsp; sx.clearRect(0,0,W,H);<br>&nbsp; if(fx==="sq"||fx==="stars"){<br>&nbsp; &nbsp; const c=getComputedStyle(sc).getPropertyValue("--c").trim()||"#00c21a";<br>&nbsp; &nbsp; const up=sc.classList.contains("p")?-1:1,jit=sc.classList.contains("r");<br>&nbsp; &nbsp; cx.fillStyle=c;<br>&nbsp; &nbsp; for(const p of P){<br>&nbsp; &nbsp; &nbsp; if(fx==="sq"){<br>&nbsp; &nbsp; &nbsp; &nbsp; p.y+=p.v*up/H*3;<br>&nbsp; &nbsp; &nbsp; &nbsp; if(p.y&gt;1.02)p.y=-.02;if(p.y&lt;-.02)p.y=1.02;<br>&nbsp; &nbsp; &nbsp; &nbsp; cx.globalAlpha=.18;<br>&nbsp; &nbsp; &nbsp; &nbsp; const jx=jit?(Math.random()-.5)*4:0;<br>&nbsp; &nbsp; &nbsp; &nbsp; cx.fillRect((p.x*W+jx)|0,(p.y*H)|0,p.s|0,p.s|0);<br>&nbsp; &nbsp; &nbsp; }else{<br>&nbsp; &nbsp; &nbsp; &nbsp; cx.globalAlpha=.12+.55*Math.abs(Math.sin(t/700+p.x*40));<br>&nbsp; &nbsp; &nbsp; &nbsp; const x=(p.x*W)|0,y=(p.y*H)|0;<br>&nbsp; &nbsp; &nbsp; &nbsp; if(p.s&gt;8){cx.fillRect(x+4,y,4,12);cx.fillRect(x,y+4,12,4)}<br>&nbsp; &nbsp; &nbsp; &nbsp; else cx.fillRect(x,y,4,4);<br>&nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; }<br>&nbsp; }else{<br>&nbsp; &nbsp; if(fx==="rain"||fx==="leaves"){<br>&nbsp; &nbsp; &nbsp; sx.fillStyle="#aebfff";sx.globalAlpha=.4;<br>&nbsp; &nbsp; &nbsp; const n=fx==="rain"?70:40;<br>&nbsp; &nbsp; &nbsp; for(let i=0;i&lt;n;i++){<br>&nbsp; &nbsp; &nbsp; &nbsp; const p=P[i];<br>&nbsp; &nbsp; &nbsp; &nbsp; sx.fillRect((p.x*W)|0,(((p.y+t*.0006*(1+p.v))%1)*H)|0,2,16);<br>&nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; if(fx!=="rain"){<br>&nbsp; &nbsp; &nbsp; const cols=COL[fx],sp=SP[fx];<br>&nbsp; &nbsp; &nbsp; for(const f of F){<br>&nbsp; &nbsp; &nbsp; &nbsp; f.y+=f.v*sp;<br>&nbsp; &nbsp; &nbsp; &nbsp; if(f.y&gt;1.02){f.y=-.03;f.x=Math.random()}<br>&nbsp; &nbsp; &nbsp; &nbsp; const sw=fx==="conf"?14:fx==="leaves"?26:18;<br>&nbsp; &nbsp; &nbsp; &nbsp; const x=(f.x*W+Math.sin(t/(fx==="conf"?500:800)+f.p)*sw)|0,y=(f.y*H)|0;<br>&nbsp; &nbsp; &nbsp; &nbsp; if(fx==="snow"){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sx.fillStyle="#fff";<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(f.s===12){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sx.globalAlpha=.95;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sx.fillRect(x+4,y,4,12);sx.fillRect(x,y+4,12,4);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }else{<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sx.globalAlpha=f.s===8?.55:.85;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sx.fillRect(x,y,f.s,f.s);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; }else if(fx==="conf"){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sx.globalAlpha=1;sx.fillStyle=cols[f.k%6];<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const h=Math.sin(t/180+f.p)&gt;0?f.s:(f.s&gt;&gt;1);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sx.fillRect(x,y,f.s+2,h+2);<br>&nbsp; &nbsp; &nbsp; &nbsp; }else if(fx==="leaves"){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sx.globalAlpha=.95;sx.fillStyle=cols[f.k%5];<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const w=f.s+4,h=(w*.6)|0;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sx.fillRect(x,y,w,h);sx.fillRect(x+(w&gt;&gt;1)-1,y+h,2,3);<br>&nbsp; &nbsp; &nbsp; &nbsp; }else{<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sx.globalAlpha=.85;sx.fillStyle=cols[f.k%3];<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sx.fillRect(x,y,f.s,(f.s&gt;&gt;1)||2);<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; }<br>&nbsp; }<br>&nbsp; requestAnimationFrame(loop);<br>})();<br>&lt;/script&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</p></div></body></html>
---NEXT.ITEM-BOUNDARY--
+<body>
+<canvas id="fx"></canvas>
+<canvas id="snow"></canvas>
+<button id="snd" class="btn" type="button">SND OFF</button>
+
+<section id="boot" class="screen">
+<div class="box">
+    <div class="boot-title">SRW // SYSTEM</div>
+    <div class="boot-file"><span class="file-icon">✓</span><span data-t>UPDATE ALL FILES ARE DELETED, YOU CAN CONTINUE.</span></div>
+    <a class="btn" href="#pass">RESUME</a>
+  </div>
+</section>
+
+<section id="pass" class="screen">
+  <div class="box">
+    <div id="lock" class="xicon"></div>
+    <div class="title">ACCESS</div>
+    <div class="subtitle">ENTER PASSWORD</div>
+    <form id="f" autocomplete="off">
+      <input id="pw" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="PASSWORD">
+      <div class="row"><button class="btn" type="submit">ENTER</button><button class="btn" type="button" id="hint">?</button></div>
+    </form>
+    <div class="error" id="err">PASSWORD REQUIRED</div>
+    <div class="cnt" id="cnt"></div>
+  </div>
+</section>
+
+<section id="denied" class="screen r">
+  <div class="box">
+    <div class="ask">МГЖ НЕ БУДЕТ<br>ИДИТЕ НАХУЙ</div>
+    <a class="btn" href="#pass">BACK</a>
+    <div class="tiny">не тот пароль, но ты близко</div>
+  </div>
+</section>
+
+<section id="x" class="screen">
+  <div class="box">
+    <div id="xicon" class="xicon"></div>
+    <div class="title"></div>
+    <div class="ask" data-t></div>
+    <a class="btn" href="#pass">BACK</a>
+  </div>
+</section>
+
+<section id="rehab" class="screen c nogl">
+  <div class="box">
+    <a id="clownLink" class="xlink" href="#circus"></a>
+    <div class="title">РЕХАБ</div>
+    <div class="ask" data-t>ЕБАТЬ ВЫ ДОЛБОЁБЫ<br>ПОВЕЛИСЬ НА РАЗВОД</div>
+    <div class="tiny">нажми на клоуна</div>
+    <a class="btn" href="#pass">BACK</a>
+  </div>
+</section>
+
+<section id="circus" class="screen c nogl">
+  <div class="box">
+    <a id="tentLink" class="xlink" href="#tent"></a>
+    <div class="ask" data-t>ДОБРО ПОЖАЛОВАТЬ<br>В ЦИРК</div>
+    <div class="tiny">нажми на шапито</div>
+    <a class="btn" href="#rehab">BACK</a>
+  </div>
+</section>
+
+<section id="tent" class="screen c nogl">
+  <div class="box">
+    <div class="title">ШАПИТО</div>
+    <div class="subtitle">ТУТ ПРЯЧЕТСЯ САМЫЙ СЕКРЕТНЫЙ ПАРОЛЬ</div>
+    <form id="f2" autocomplete="off">
+      <input id="pw2" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="???">
+      <div class="row"><button class="btn" type="submit">ENTER</button></div>
+    </form>
+    <div class="error" id="err2"></div>
+    <a class="btn" href="#circus">BACK</a>
+  </div>
+</section>
+
+<section id="prize" class="screen c nogl">
+  <div class="box">
+    <div id="prizeIcon" class="xicon"></div>
+    <div class="title">ПОЗДРАВЛЯЕМ!</div>
+    <div class="ask" data-t>МОЛОДЕЦ, ТЫ УЧАСТВУЕШЬ В РОЗЫГРЫШЕ.<br><br>СКИНЬ СКРИН И БУДЕШЬ В ЧИСЛЕ УЧАСТНИКОВ.</div>
+    <div class="tiny">приз — наше уважение</div>
+    <a class="btn" href="#pass">НА ГЛАВНУЮ</a>
+  </div>
+</section>
+
+<section id="nostalgia" class="screen">
+  <div class="box">
+    <div class="ask" data-t>ГОТОВ ВСПОМНИТЬ<br>КАК ВСЁ НАЧАЛОСЬ?</div>
+    <a class="btn" href="#emo">ДА</a>
+  </div>
+</section>
+
+<section id="emo" class="screen p">
+  <div class="box scroll">
+    <a class="btn qmark" href="#story">?</a>
+    <div class="title">2024</div>
+    <ul class="emo-list">
+      <li>я не знаю</li>
+      <li class="k">дом</li>
+      <li>иди нахуй</li>
+      <li class="k">genre change</li>
+      <li>the first and last slow</li>
+      <li class="k">six months longing</li>
+      <li>THE LAST TIME BUT STRONG</li>
+      <li class="k">who am I</li>
+    </ul>
+    <a class="btn" href="#pass">КОНЕЦ</a>
+  </div>
+</section>
+
+<section id="story" class="screen p">
+  <div class="box wide">
+    <div class="story-text" data-t><p>2024 год — я только начал заниматься музыкой. Признаюсь, тогда я был не самым приятным человеком, и ничто не может меня оправдать. Однако я благодарен тому времени, потому что оно показало мне, кто были мои настоящие друзья.</p><p>Я хочу выразить благодарность всем, кто остался со мной. Эти два года я упорно работал над новым материалом. Я вернул свой старый звук и вернулся к истокам. Впереди нас ждёт много нового и интересного.Всё останется прежним, изменится только название. Пусть SRW будет для вас как SunREW.</p><p>Ну что, друзья, давайте! Рейв — это сила!</p></div>
+    <a class="btn" href="#emo">НАЗАД</a>
+  </div>
+</section>
+
+<section id="ravewarn" class="screen y">
+  <div class="date">
+    <div class="ask">⚠ ВНИМАНИЕ<br><br>МИГАЮЩИЕ ОГНИ</div>
+    <div class="row"><a class="btn" href="#rave">ПОЕХАЛИ</a><a class="btn" href="#pass">НЕ НАДО</a></div>
+  </div>
+</section>
+
+<section id="rave" class="screen">
+  <div class="date">
+    <div class="coming">РЕЙВ —<br>ЭТО СИЛА!</div>
+    <a class="btn" href="#pass">EXIT</a>
+  </div>
+</section>
+
+<section id="spoiler" class="screen">
+  <div class="date"><a class="btn" href="#date1">SPOILER</a></div>
+  <div class="status">SRW // AUTHORIZED</div>
+</section>
+
+<section id="date1" class="screen">
+  <div class="date">
+    <div class="dateText">17.07.27</div>
+    <div id="t1" class="countdown">00:00:00:00</div>
+    <div class="caption">DAYS : HOURS : MINUTES : SECONDS</div>
+    <a class="two" href="#date2">2</a>
+  </div>
+  <div class="status">TARGET 01</div>
+</section>
+
+<section id="date2" class="screen">
+  <div class="date">
+    <div class="dateText">30.07.27</div>
+    <div id="t2" class="countdown">00:00:00:00</div>
+    <div class="caption">DAYS : HOURS : MINUTES : SECONDS</div>
+    <a class="three" href="#coming">3</a>
+  </div>
+  <a class="back" href="#date1">BACK</a>
+  <div class="status">TARGET 02</div>
+</section>
+
+<section id="coming" class="screen r">
+  <div class="date">
+    <div class="coming" data-t>SRW<br>IT'S COMING</div>
+    <a class="btn" href="#thanks">NEXT</a>
+  </div>
+</section>
+
+<section id="thanks" class="screen p">
+  <div class="date">
+    <div class="coming" data-t>СПАСИБО<br>ЗА ОЖИДАНИЕ</div>
+    <a class="btn" href="#links">ДАЛЕЕ</a>
+  </div>
+</section>
+
+<section id="links" class="screen">
+  <div class="date">
+    <div class="title">FIND US</div>
+    <a class="btn" href="https://t.me/SRW1526" target="_blank" rel="noopener">TELEGRAM</a>
+    <a class="btn" href="https://open.spotify.com/artist/0FLoXww3qz9YWgwAswKQd6" target="_blank" rel="noopener">SPOTIFY</a>
+    <a class="btn" href="https://www.instagram.com/sunrew1526" target="_blank" rel="noopener">INSTAGRAM</a>
+    <a class="btn" href="#thanks">BACK</a>
+  </div>
+</section>
+
+<script>
+const $=id=>document.getElementById(id);
+function cur(){const e=document.getElementById((location.hash||"#boot").slice(1));return e&&e.classList.contains("screen")?e:$("boot")}
+
+/* TELEGRAM MINI APP (active only inside Telegram) */
+const tg=(window.Telegram&&Telegram.WebApp&&Telegram.WebApp.initData)?Telegram.WebApp:null;
+const ver=v=>{try{return tg.isVersionAtLeast(v)}catch(_){return false}};
+if(tg){
+  try{tg.ready();tg.expand()}catch(_){}
+  try{tg.setHeaderColor("#000000");tg.setBackgroundColor("#000000")}catch(_){}
+  if(ver("7.10"))try{tg.setBottomBarColor("#000000")}catch(_){}
+  if(ver("7.7"))try{tg.disableVerticalSwipes()}catch(_){}
+  if(ver("6.1"))try{tg.BackButton.onClick(()=>history.back())}catch(_){}
+}
+function syncBack(){
+  if(!tg||!ver("6.1"))return;
+  const s=cur();
+  try{(s&&s.id!=="boot")?tg.BackButton.show():tg.BackButton.hide()}catch(_){}
+}
+/* haptics: Telegram feedback if available, else vibration */
+function buzz(k){
+  if(tg&&tg.HapticFeedback){
+    try{
+      if(k==="err")tg.HapticFeedback.notificationOccurred("error");
+      else if(k==="red")tg.HapticFeedback.notificationOccurred("warning");
+      else tg.HapticFeedback.impactOccurred("light");
+    }catch(_){}
+    return;
+  }
+  if(navigator.vibrate)navigator.vibrate(k==="err"?120:k==="red"?[80,40,80]:10);
+}
+/* external links open through Telegram */
+addEventListener("click",e=>{
+  const a=e.target.closest("a[target=_blank]");
+  if(!a||!tg)return;
+  e.preventDefault();
+  const u=a.href;
+  try{/^https:\/\/t\.me\//.test(u)?tg.openTelegramLink(u):tg.openLink(u)}
+  catch(_){window.open(u,"_blank")}
+});
+
+/* COUNTDOWN (shows IT'S HERE at zero) */
+function cd(id,t){
+  const el=$(id);
+  const f=()=>{
+    const ms=new Date(t)-Date.now();
+    if(ms<=0){el.textContent="IT'S HERE";return}
+const v=[Math.floor(ms/864e5),Math.floor(ms/36e5)%24,Math.floor(ms/6e4)%60,Math.floor(ms/1e3)%60];
+    el.textContent=v.map(n=>String(n).padStart(2,"0")).join(":");
+  };
+  f();setInterval(f,1000);
+}
+cd("t1","2027-07-17T00:00:00");
+cd("t2","2027-07-30T00:00:00");
+
+/* SOUND (8-bit, off by default) */
+let ac,on=false;
+function beep(f,d=.06,t="square"){
+  if(!on)return;
+  const o=ac.createOscillator(),g=ac.createGain();
+  o.type=t;o.frequency.value=f;g.gain.value=.05;
+  o.connect(g);g.connect(ac.destination);o.start();
+  g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+d);o.stop(ac.currentTime+d);
+}
+$("snd").onclick=()=>{
+  on=!on;
+  if(on&&!ac)ac=new(window.AudioContext||window.webkitAudioContext)();
+  $("snd").textContent="SND "+(on?"ON":"OFF");beep(660);
+};
+addEventListener("click",e=>{
+  if(e.target.closest(".btn")&&e.target.id!=="snd"){beep(520);if(tg)buzz("tap")}
+});
+
+/* TYPEWRITER */
+document.querySelectorAll("[data-t]").forEach(e=>e.dataset.t=e.innerHTML);
+let tt;
+function typeIn(root){
+  clearInterval(tt);
+  const els=[...root.querySelectorAll("[data-t]")];
+  els.forEach(e=>e.innerHTML="");
+  let k=0,i=0;
+  tt=setInterval(()=>{
+    const e=els[k];
+    if(!e){clearInterval(tt);return}
+    const h=e.dataset.t,n=Math.ceil(h.length/250);
+    for(let j=0;j<n&&i<h.length;j++){if(h[i]==="<")i=h.indexOf(">",i);i++}
+    if(i>=h.length){e.innerHTML=h;k++;i=0}
+    else e.innerHTML=h.slice(0,i)+'<i class="cur"></i>';
+  },28);
+}
+
+/* ROUTING: show screen, glitch, typing, red-screen buzz + haptics */
+function route(){
+  const b=document.body;
+  b.classList.remove("glitch");void b.offsetWidth;b.classList.add("glitch");
+  const sc=cur();
+  document.querySelectorAll(".screen").forEach(x=>x.classList.toggle("on",x===sc));
+  typeIn(sc);
+  syncBack();
+  if(sc.classList.contains("r")){beep(90,.3,"sawtooth");buzz("red")}
+  if(sc.classList.contains("c")){beep(784,.12)}
+}
+addEventListener("hashchange",route);
+
+/* PIXEL ICONS: px(width,height,[[x,y,w,h,'b'?]],scale). 'b' = cut-out (box colour) */
+const px=(w,h,r,s)=>`<svg viewBox="0 0 ${w} ${h}" width="${w*s}" height="${h*s}" shape-rendering="crispEdges" fill="currentColor">${r.map(a=>`<rect x="${a[0]}" y="${a[1]}" width="${a[2]}" height="${a[3]}"${a[4]?' class="b"':""}/>`).join("")}</svg>`;
+const ICONS={
+  hat:px(16,13,[[3,0,3,6],[10,0,3,6],[4,1,1,4,1],[11,1,1,4,1],[2,6,12,4],[1,10,14,3],[3,11,1,1,1],[6,11,1,1,1],[9,11,1,1,1],[12,11,1,1,1]],6),
+  heart:px(7,6,[[1,0,2,1],[4,0,2,1],[0,1,7,2],[1,3,5,1],[2,4,3,1],[3,5,1,1]],12),
+  skull:px(8,7,[[2,0,4,1],[1,1,6,1],[0,2,8,3],[1,3,2,2,1],[5,3,2,2,1],[1,5,6,1],[2,6,4,1],[3,6,1,1,1]],11),
+  star:px(7,7,[[3,0,1,2],[0,2,7,1],[1,3,5,1],[2,4,3,1],[1,5,2,1],[4,5,2,1],[1,6,1,1],[5,6,1,1]],12),
+  earring:px(7,11,[[2,0,3,1],[1,1,1,2],[5,1,1,2],[2,3,3,1],[3,4,1,2],[3,6,1,1],[2,7,3,1],[1,8,5,1],[2,9,3,1],[3,10,1,1]],8),
+  guitar:px(12,11,[[10,0,2,1],[9,1,2,1],[8,2,2,1],[7,3,2,1],[6,4,2,1],[4,5,4,1],[3,6,5,1],[2,7,5,1],[1,8,6,1],[1,9,5,1],[2,10,3,1],[4,7,1,1,1],[3,8,1,1,1]],8),
+  lock:px(7,8,[[2,0,3,1],[1,1,1,2],[5,1,1,2],[0,3,7,5],[3,4,1,2,1]],7),
+  ghost:px(8,8,[[2,0,4,1],[1,1,6,1],[0,2,8,5],[0,7,2,1],[3,7,2,1],[6,7,2,1],[2,3,1,2,1],[5,3,1,2,1]],10),
+  bolt:px(6,8,[[3,0,3,1],[2,1,3,1],[1,2,3,1],[1,3,5,1],[2,4,3,1],[2,5,2,1],[1,6,2,1],[1,7,1,1]],10),
+  moon:px(7,8,[[2,0,3,1],[1,1,5,1],[0,2,7,4],[1,6,5,1],[2,7,3,1],[4,1,2,1,1],[3,2,4,3,1],[4,5,2,1,1]],10),
+  crown:px(9,6,[[0,0,1,1],[4,0,1,1],[8,0,1,1],[0,1,2,1],[3,1,3,1],[7,1,2,1],[0,2,9,3],[2,3,1,1,1],[4,3,1,1,1],[6,3,1,1,1],[0,5,9,1]],10),
+  /* circus: clown face + big top tent */
+  clown:px(11,10,[[0,2,2,4],[9,2,2,4],[2,0,7,2],[2,2,7,7],[3,9,5,1],[3,3,1,2,1],[7,3,1,2,1],[4,5,3,2,1],[5,5,1,2],[3,7,1,1,1],[4,8,3,1,1],[7,7,1,1,1]],9),
+  tent:px(13,11,[[6,0,1,2],[7,0,3,1],[6,2,1,1],[5,3,3,1],[4,4,5,1],[3,5,7,1],[2,6,9,1],[1,7,11,1],[0,8,13,3],[5,9,3,2,1],[5,4,1,3,1],[7,4,1,3,1]],9)
+};
+ICONS.emo=ICONS.earring+ICONS.guitar+ICONS.earring;
+$("lock").innerHTML=ICONS.lock;
+$("clownLink").innerHTML=ICONS.clown;
+$("tentLink").innerHTML=ICONS.tent;
+$("prizeIcon").innerHTML=ICONS.star;
+/* PASSWORDS: 9 route passwords + 91 secret windows = 100
+   SEC format: [theme, title, text, icon, fx]
+   themes: "" green, p pink, y yellow, r red, v purple, e emo pink-black
+   fx: sq stars snow leaves petals rain conf (default comes from theme) */
+const GO={"1526":"#spoiler","333":"#denied","2024":"#nostalgia","170727":"#date1","300727":"#date2","RAVE":"#ravewarn","РЕЙВ":"#ravewarn","РЕХАБ":"#rehab","67":"#prize"};
+const SEC={
+  /* digits */
+  "666":["r","666","ТЫ ВЫЗВАЛ<br>НЕ ТОГО.","skull"],
+  "777":["y","JACKPOT","ПРИЗА НЕТ.<br>НО ТЫ ПОВЕЗУЧИЙ.","star"],
+  "0000":["r","СЕРЬЁЗНО?","НУ ТЫ И ТУПОЙ."],
+  "1234":["r","СЕРЬЁЗНО?","НУ ТЫ И ТУПОЙ."],
+  "12345":["r","12345","НУ НЕТ."],
+  "123456":["r","123456","ДАЖЕ НЕ ПЫТАЙСЯ."],
+  "1":["r","1","ДИМА ЗАЕБАЛ<br>СЛУШАТЬ ХУЙНЮ"],
+  "15":["","15","ПОЛОВИНА ПАРОЛЯ.<br>ЕСТЬ ЕЩЁ 26."],
+  "26":["","26","ВТОРАЯ ПОЛОВИНА.<br>ПЕРВАЯ — 15."],
+  "42":["y","42","ОТВЕТ НА ГЛАВНЫЙ<br>ВОПРОС ВСЕЛЕННОЙ."],
+  "69":["r","69","НУ ТЫ И ШКОЛЬНИК."],
+  "007":["","007","АГЕНТ SRW<br>НА СВЯЗИ."],
+  "111":["y","111","СЧАСТЛИВЫЙ ЧАС.<br>ЗАГАДАЙ ЖЕЛАНИЕ."],
+  "404":["r","404","ТУТ НИЧЕГО НЕТ.<br>ИЛИ ЕСТЬ?"],
+  "31337":["y","31337","ХАКЕР?<br>СЕРЬЁЗНО?"],
+  /* years */
+  "2007":["e","2007","ЧЁЛКА НА ГЛАЗА.<br>ВСЁ ПО-ЭМО.","emo"],
+  "2008":["e","2008","ДРУЗЬЯ В TOP 8.<br>ЧЁЛКА ЕЩЁ ДЛИННЕЕ.","emo"],
+  "MYSPACE":["e","MYSPACE","TOP 8 — ЭТО<br>СЕРЬЁЗНО.","emo"],
+  "ГИТАРА":["e","ГИТАРА","ТРИ АККОРДА<br>И МНОГО ЧУВСТВ.","emo"],
+  "СЕРЁЖКИ":["e","СЕРЁЖКИ","ПЕРВЫЙ ПРОКОЛ.<br>САМЫЙ ВАЖНЫЙ.","emo"],
+  "ЧЁЛКА":["e","ЧЁЛКА","НИЧЕГО НЕ ВИДНО.<br>И ПУСТЬ.","emo"],
+  "ЧЕЛКА":["e","ЧЁЛКА","НИЧЕГО НЕ ВИДНО.<br>И ПУСТЬ.","emo"],
+  "2010":["","2010","КЛИПЫ ПО ТВ.<br>ТРЕКИ НА ТЕЛЕФОНЕ."],
+  "2012":["r","2012","КОНЕЦ СВЕТА<br>ОТМЕНИЛИ."],
+  "2018":["","2018","ТОГДА ВСЁ<br>БЫЛО ПРОЩЕ."],
+  "2019":["y","2019","ПОСЛЕДНИЙ<br>НОРМАЛЬНЫЙ ГОД."],
+  "2020":["y","2020","КАК ТАМ<br>НА КАРАНТИНЕ?"],
+  "КАРАНТИН":["y","2020","КАК ТАМ<br>НА КАРАНТИНЕ?"],
+  "2021":["v","2004","ЗИМА ПРАВДА<br>БЫЛА ТЁПЛОЙ","hat"],
+  "ЗИМА":["v","2004","ЗИМА ПРАВДА<br>БЫЛА ТЁПЛОЙ","hat"],
+  "ШАПКА":["v","ШАПКА","С УШКАМИ.<br>КАК И ДОЛЖНО БЫТЬ.","hat"],
+  "ЗАЙЧИК":["v","ЗАЙЧИК","ТУК-ТУК.<br>ТЫ НАШЁЛ ЗАЙЧИКА.","hat"],
+  "2022":["","2022","ВСЁ ПОМЕНЯЛОСЬ.<br>И МЫ ТОЖЕ."],
+  "2023":["p","2023","ТИХО.<br>ПОДОЗРИТЕЛЬНО ТИХО."],
+  "2025":["p","2025","ТИХИЙ ГОД.<br>ВСЁ ГОТОВИЛОСЬ."],
+  "2026":["p","2026","ДВА ГОДА РАБОТЫ.<br>ОСТАЛОСЬ СОВСЕМ НЕМНОГО."],
+  "2027":["r","2027","ОНО БЛИЗКО."],
+  "2028":["r","2028","ДАЛЕКО.<br>ДАЖЕ ДЛЯ НАС."],
+  /* names + words */
+  "SRW":["","SRW","ТЫ БЛИЗКО.<br>ПОПРОБУЙ ДОБАВИТЬ ЦИФРЫ."],
+  "SRW1526":["y","SRW1526","ПОЧТИ.<br>ПРОСТО 1526."],
+  "SUNREW":["y","SUNREW","ВСЁ ОСТАЁТСЯ ПРЕЖНИМ.<br>МЕНЯЕТСЯ ТОЛЬКО НАЗВАНИЕ."],
+  "SUNREW1526":["y","SUNREW1526","ПОЛНОЕ ИМЯ.<br>ТЫ СВОЙ."],
+  "SUN":["y","SUN","СОЛНЦЕ УЖЕ<br>ВСХОДИТ."],
+  "REW":["y","REW","ПЕРЕМОТКА<br>НАЗАД."],
+  "ДОМ":["","ДОМ","ДОМ — ТАМ,<br>ГДЕ ТВОИ ЛЮДИ."],
+  "DOM":["","ДОМ","ДОМ — ТАМ,<br>ГДЕ ТВОИ ЛЮДИ."],
+  "ДИМА":["r","ДИМА","ГОНДОН"],
+  "ДИМА ХОРОШИЙ":["r","ДИМА","НЕТ. ГОНДОН."],
+  "ИДИ НАХУЙ":["r","","САМ ИДИ НАХУЙ"],
+  "МГЖ":["r","МГЖ","МГЖ НЕ БУДЕТ.<br>СМИРИСЬ."],
+  "БРО":["","БРО","БРО."],
+  "ПРИВЕТ":["","ПРИВЕТ","ДАВНО ЖДЁМ."],
+  "HELLO":["","HELLO","...HELLO?"],
+  "ПОКА":["","ПОКА","ЕЩЁ УВИДИМСЯ."],
+  "ДА":["r","","НЕТ."],
+  "НЕТ":["","","ДА."],
+  "ПАРОЛЬ":["y","ПАРОЛЬ","ЭТО НЕ ПАРОЛЬ."],
+  "PASSWORD":["r","PASSWORD","СЛИШКОМ ОЧЕВИДНО."],
+  "QWERTY":["r","QWERTY","ТЫ СЕРЬЁЗНО?"],
+  "ДРУЗЬЯ":["p","ДРУЗЬЯ","СПАСИБО,<br>ЧТО ОСТАЛИСЬ."],
+  "ЭМО":["p","ЭМО","НЕ ПЛАЧЬ.<br>ТАНЦУЙ."],
+  "ПИКСЕЛЬ":["","ПИКСЕЛЬ","ВСЁ ЗДЕСЬ СДЕЛАНО<br>ИЗ КВАДРАТИКОВ."],
+  "ГРУСТЬ":["p","ГРУСТЬ","ЭТО ТОЖЕ<br>ЧАСТЬ ЗВУКА.","","rain"],
+  "ПРИЗРАК":["","ПРИЗРАК","ТЫ НИКОГО<br>НЕ ВИДЕЛ.","ghost"],
+  "МОЛНИЯ":["y","МОЛНИЯ","ЭНЕРГИИ ХВАТИТ<br>НА ВЕСЬ РЕЙВ.","bolt"],
+  "ЛУНА":["","ЛУНА","НОЧЬЮ ЗВУЧИТ<br>ЛУЧШЕ.","moon","stars"],
+  "КОРОНА":["y","КОРОНА","НЕ ДЛЯ ВСЕХ.<br>ТОЛЬКО ДЛЯ СВОИХ.","crown"],
+  "БИТ":["","БИТ","СЕРДЦЕБИЕНИЕ<br>ВСЕГО ТРЕКА."],
+  "ДРОП":["r","ДРОП","ЖДЁМ ДРОП.<br>СКОРО."],
+"ТИЗЕР":["y","ТИЗЕР","ЕЩЁ РАНО.<br>НО БЛИЗКО."],
+  /* seasons + time of day */
+  "ВЕСНА":["p","ВЕСНА","ВСЁ НАЧИНАЕТСЯ<br>ЗАНОВО.","","petals"],
+  "ЛЕТО":["y","ЛЕТО","САМОЕ ГРОМКОЕ<br>ВРЕМЯ ГОДА."],
+  "ОСЕНЬ":["y","ОСЕНЬ","ЛУЧШЕЕ ВРЕМЯ<br>ДЛЯ ГРУСТНЫХ ТРЕКОВ.","","leaves"],
+  "НОЧЬ":["","НОЧЬ","ЛУЧШЕЕ ВРЕМЯ<br>ДЛЯ МУЗЫКИ.","","stars"],
+  "ТИШИНА":["","ТИШИНА","..."],
+  /* tracks + 2024 list */
+  "Я НЕ ЗПНЮ":["p","Я НЕ ЗПНЮ","ЭТО НАЗВАНИЕ БЫЛО ПРИДУМАНО СЛУЧАЙНО<br>И СТАЛО САМЫМ ПОПУЛЯРНЫМ ТРЕКОМ"],
+  "WHO AM I":["p","WHO AM I","ТОТ, КТО ВЕРНУЛСЯ<br>К ИСТОКАМ."],
+  "GENRE CHANGE":["p","GENRE CHANGE","СТАРЫЙ ЗВУК.<br>НОВЫЙ ПУТЬ."],
+  "SIX MONTHS LONGING":["p","SIX MONTHS LONGING","ПОЛГОДА ТИШИНЫ.<br>ТЕПЕРЬ ГРОМКО."],
+  "THE LAST TIME BUT STRONG":["p","THE LAST TIME","ПОСЛЕДНИЙ РАЗ.<br>НО ГРОМЧЕ."],
+  "THE FIRST AND LAST SLOW":["p","FIRST AND LAST","САМЫЙ ТИХИЙ ТРЕК."],
+  "СТАРЫЙ ЗВУК":["y","СТАРЫЙ ЗВУК","ВЕРНУЛСЯ К ИСТОКАМ."],
+  "МУЗЫКА":["","МУЗЫКА","ВСЁ НАЧАЛОСЬ С НЕЁ."],
+  "ЛЮБОВЬ":["p","ЛЮБОВЬ","ОНА БЫЛА<br>ВСЁ ЭТО ВРЕМЯ.","heart"],
+  "LOVE":["p","LOVE","ОНА БЫЛА<br>ВСЁ ЭТО ВРЕМЯ.","heart"],
+  "SPOTIFY":["","SPOTIFY","СКОРО ТАМ."],
+  "АЛЬБОМ":["y","АЛЬБОМ","ЕЩЁ НЕ ВРЕМЯ.<br>НО СКОРО."],
+  /* jokes + meta */
+  "ADMIN":["r","ADMIN","ТЫ НЕ АДМИН."],
+  "HELP":["y","HELP","НАЖМИ «?»<br>НА ЭКРАНЕ ПАРОЛЯ."],
+  "SECRET":["y","SECRET","ВСЕ ПАРОЛИ — СЕКРЕТ."],
+  "THANKS":["p","THANKS","СПАСИБО,<br>ЧТО ТЫ ЗДЕСЬ."]
+};
+const HINTS=["ЦИФРЫ ПОМНЯТ ДАТЫ","СЛОВА ЖИВУТ В СПИСКЕ 2024","ИМЯ, КОТОРОЕ СМЕНИЛОСЬ","НЕ ВСЕ ПАРОЛИ ВЕДУТ ВПЕРЁД","ЕСТЬ СЛОВО, ОТ КОТОРОГО ТРЯСЁТ ПОЛ","КАЖДЫЙ ГОД — ПАРОЛЬ","ДАЖЕ ПРОСТЫЕ СЛОВА РАБОТАЮТ","ЗИМА БЫЛА ТЁПЛОЙ","ЧЁЛКА, СЕРЁЖКИ И ГИТАРА","НОЧЬЮ ВИДНО ЛУНУ","КТО-ТО ЗДЕСЬ ЕСТЬ, НО ЕГО НЕ ВИДНО","ЕСТЬ МЕСТО, ГДЕ ЛЕЧАТ ОТ ВСЕГО","САМЫЙ СЕКРЕТНЫЙ — ДВЕ ЦИФРЫ","СЕНТЯБРЬ ГОРИТ"];
+let hi=0;
+const say=(t,bad)=>{$("err").textContent=t;$("err").style.color=bad?"#f33":""};
+
+/* SECRETS COUNTER (remembers what you found) */
+const TOTAL=Object.keys(GO).length+Object.keys(SEC).length;
+let found=new Set();
+try{found=new Set(JSON.parse(localStorage.getItem("srw_found")||"[]").filter(k=>k in GO||k in SEC))}catch(_){}
+function upd(){
+  $("cnt").textContent=found.size>=TOTAL?"ALL "+TOTAL+" FOUND. ТЫ ЛЕГЕНДА.":"SECRETS FOUND "+found.size+"/"+TOTAL;
+}
+function mark(v){
+  found.add(v);
+  try{localStorage.setItem("srw_found",JSON.stringify([...found]))}catch(_){}
+  upd();
+}
+upd();
+
+$("hint").onclick=()=>say(HINTS[hi++%HINTS.length]);
+$("f").onsubmit=e=>{
+  e.preventDefault();
+  const v=$("pw").value.trim().toUpperCase().replace(/\s+/g," ");
+  $("pw").value="";
+  if(GO[v]){mark(v);say("PASSWORD REQUIRED");location.hash=GO[v];return}
+  if(SEC[v]){
+    mark(v);
+    const [th,title,txt,ic,fx]=SEC[v],s=$("x");
+    s.className="screen "+th+" on";
+    if(fx)s.dataset.fx=fx;else delete s.dataset.fx;
+    $("xicon").innerHTML=ic?ICONS[ic]:"";
+    s.querySelector(".title").textContent=title;
+    s.querySelector("[data-t]").dataset.t=txt;
+    say("PASSWORD REQUIRED");
+    if(location.hash==="#x")route();else location.hash="#x";
+    return;
+  }
+  say("ACCESS DENIED",true);beep(110,.25,"sawtooth");buzz("err");
+};
+
+/* SECRET PASSWORD INSIDE THE CIRCUS TENT */
+$("f2").onsubmit=e=>{
+  e.preventDefault();
+  const v=$("pw2").value.trim();
+  $("pw2").value="";
+  if(v==="67"){mark("67");$("err2").textContent="";location.hash="#prize";return}
+  $("err2").textContent="НЕ ТО. КЛОУНЫ ЗАГОГОЧУТ.";
+  $("err2").style.color="#f33";
+  beep(110,.25,"sawtooth");buzz("err");
+};
+
+/* PER-WINDOW VISUALS
+   sq: pixel squares | stars: twinkle | snow | leaves + rain | petals | rain | conf: confetti */
+const cv=$("fx"),cx=cv.getContext("2d"),sn=$("snow"),sx=sn.getContext("2d");
+let W,H;
+const P=Array.from({length:70},()=>({x:Math.random(),y:Math.random(),s:4+(Math.random()*8|0),v:.3+Math.random()*1.2}));
+const F=Array.from({length:110},()=>({x:Math.random(),y:Math.random(),s:[4,4,4,8,8,12][Math.random()*6|0],v:.4+Math.random()*.9,p:Math.random()*6.28,k:Math.random()*6|0}));
+const FXMAP={v:"snow",e:"leaves",c:"conf",y:"stars"};
+const BG={snow:"#1c0640",leaves:"#150805",conf:"#0d0014",petals:"#14000d",rain:"#05070f"};
+const COL={
+  leaves:["#d9480f","#f08c00","#c92a2a","#e8590c","#ffd43b"],
+  conf:["#ff1fa8","#00e5ff","#ffd400","#00c21a","#ff3b3b","#b57bff"],
+  petals:["#ffb3d9","#ff80c0","#ffe0f0"]
+};
+const SP={snow:.004,leaves:.005,conf:.006,petals:.003};
+function fxOf(sc){
+  if(sc.dataset.fx)return sc.dataset.fx;
+  for(const k in FXMAP)if(sc.classList.contains(k))return FXMAP[k];
+  return "sq";
+}
+function rs(){W=cv.width=sn.width=innerWidth;H=cv.height=sn.height=innerHeight}
+rs();addEventListener("resize",rs);
+route();
+(function loop(t=0){
+  const sc=cur(),fx=fxOf(sc);
+  cx.globalAlpha=1;cx.fillStyle=BG[fx]||"#000";cx.fillRect(0,0,W,H);
+  sx.clearRect(0,0,W,H);
+  if(fx==="sq"||fx==="stars"){
+    const c=getComputedStyle(sc).getPropertyValue("--c").trim()||"#00c21a";
+    const up=sc.classList.contains("p")?-1:1,jit=sc.classList.contains("r");
+    cx.fillStyle=c;
+    for(const p of P){
+      if(fx==="sq"){
+        p.y+=p.v*up/H*3;
+        if(p.y>1.02)p.y=-.02;if(p.y<-.02)p.y=1.02;
+        cx.globalAlpha=.18;
+        const jx=jit?(Math.random()-.5)*4:0;
+        cx.fillRect((p.x*W+jx)|0,(p.y*H)|0,p.s|0,p.s|0);
+      }else{
+        cx.globalAlpha=.12+.55*Math.abs(Math.sin(t/700+p.x*40));
+        const x=(p.x*W)|0,y=(p.y*H)|0;
+        if(p.s>8){cx.fillRect(x+4,y,4,12);cx.fillRect(x,y+4,12,4)}
+        else cx.fillRect(x,y,4,4);
+      }
+    }
+  }else{
+    if(fx==="rain"||fx==="leaves"){
+      sx.fillStyle="#aebfff";sx.globalAlpha=.4;
+      const n=fx==="rain"?70:40;
+      for(let i=0;i<n;i++){
+        const p=P[i];
+        sx.fillRect((p.x*W)|0,(((p.y+t*.0006*(1+p.v))%1)*H)|0,2,16);
+      }
+    }
+    if(fx!=="rain"){
+      const cols=COL[fx],sp=SP[fx];
+      for(const f of F){
+        f.y+=f.v*sp;
+        if(f.y>1.02){f.y=-.03;f.x=Math.random()}
+        const sw=fx==="conf"?14:fx==="leaves"?26:18;
+        const x=(f.x*W+Math.sin(t/(fx==="conf"?500:800)+f.p)*sw)|0,y=(f.y*H)|0;
+        if(fx==="snow"){
+          sx.fillStyle="#fff";
+          if(f.s===12){
+            sx.globalAlpha=.95;
+            sx.fillRect(x+4,y,4,12);sx.fillRect(x,y+4,12,4);
+          }else{
+            sx.globalAlpha=f.s===8?.55:.85;
+            sx.fillRect(x,y,f.s,f.s);
+          }
+        }else if(fx==="conf"){
+          sx.globalAlpha=1;sx.fillStyle=cols[f.k%6];
+          const h=Math.sin(t/180+f.p)>0?f.s:(f.s>>1);
+          sx.fillRect(x,y,f.s+2,h+2);
+        }else if(fx==="leaves"){
+          sx.globalAlpha=.95;sx.fillStyle=cols[f.k%5];
+          const w=f.s+4,h=(w*.6)|0;
+          sx.fillRect(x,y,w,h);sx.fillRect(x+(w>>1)-1,y+h,2,3);
+        }else{
+          sx.globalAlpha=.85;sx.fillStyle=cols[f.k%3];
+          sx.fillRect(x,y,f.s,(f.s>>1)||2);
+        }
+      }
+    }
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
